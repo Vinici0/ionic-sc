@@ -1,0 +1,7 @@
+{
+  "name": "axios-v2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
