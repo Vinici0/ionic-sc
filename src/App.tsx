@@ -3,9 +3,28 @@ import {
   IonApp,
   IonContent,
   IonRouterOutlet,
+  IonTabs,
   setupIonicReact,
 } from "@ionic/react";
-import { IonTabBar, IonTabButton, IonIcon, IonLabel , IonMenu, IonHeader, IonToolbar, IonTitle, IonSplitPane, IonList, IonItem, IonAvatar, IonNote, IonButton, IonListHeader, IonAlert, IonText } from "@ionic/react";
+import {
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel,
+  IonMenu,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonSplitPane,
+  IonList,
+  IonItem,
+  IonAvatar,
+  IonNote,
+  IonButton,
+  IonListHeader,
+  IonAlert,
+  IonText,
+} from "@ionic/react";
 import { playCircle, radio, library, search } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
@@ -30,17 +49,23 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import AppRouter from "./components/router/AppRouter";
 import Tab1 from "./pages/Tab1";
+import SignaleoRoute from "./components/router/AppRouter";
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-  
-    <IonContent>
+    <IonReactRouter>
+      <IonTabs>
+        <IonRouterOutlet>
+          <SignaleoRoute />
+        </IonRouterOutlet>
+      </IonTabs>
+    </IonReactRouter>
+    {/* <IonContent>
       <AppRouter />
       </IonContent>
       <IonTabBar slot="bottom">
-
         <IonTabButton tab="home" href="/page1">
           <IonIcon icon={playCircle} />
           <IonLabel>Listen now</IonLabel>
@@ -60,7 +85,7 @@ const App: React.FC = () => (
           <IonIcon icon={search} />
           <IonLabel>Search</IonLabel>
         </IonTabButton>
-      </IonTabBar>
+      </IonTabBar> */}
   </IonApp>
 );
 

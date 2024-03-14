@@ -27,8 +27,6 @@ const AppRouter: React.FC = () => {
   };
 
   return (
-    <IonReactRouter>
-      <IonSplitPane contentId="main">
         <IonRouterOutlet id="main">
           <Route path="/page1" component={Tab1} exact />
           <Route path="/page2" component={Tab2} exact />
@@ -36,8 +34,6 @@ const AppRouter: React.FC = () => {
           <Route path="/page4" component={Tab4} exact />
           <Route path="/" render={() => <Redirect to="/page1" />} exact />
         </IonRouterOutlet>
-      </IonSplitPane>
-    </IonReactRouter>
   );
 };
 
