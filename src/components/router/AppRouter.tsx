@@ -7,8 +7,9 @@ import { User } from "../../interfaces/interfaces";
 import Tab2 from "../../pages/Tab2";
 import Tab3 from "../../pages/Tab3";
 import Tab4 from "../../pages/Tab4";
+import Login from "../../pages/Login";
 
-const AppRouter: React.FC = () => {
+const SignaleoRoute: React.FC = () => {
   const user: User = {
     userId: 1,
     partnerId: 2,
@@ -28,7 +29,7 @@ const AppRouter: React.FC = () => {
 
   return (
         <IonRouterOutlet id="main">
-          <Route path="/page1" component={Tab1} exact />
+          <Route path="/login" component={Login} exact />
           <Route path="/page2" component={Tab2} exact />
           <Route path="/page3" component={Tab3} exact />
           <Route path="/page4" component={Tab4} exact />
@@ -37,4 +38,4 @@ const AppRouter: React.FC = () => {
   );
 };
 
-export default AppRouter;
+export default SignaleoRoute;

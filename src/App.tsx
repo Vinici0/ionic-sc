@@ -46,9 +46,9 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import "./theme/variables.css";
+// import "./theme/variables.css";
 import AppRouter from "./components/router/AppRouter";
-import Tab1 from "./pages/Tab1";
+// import Tab1 from "./pages/Tab1";
 import SignaleoRoute from "./components/router/AppRouter";
 
 setupIonicReact();
@@ -57,35 +57,43 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
+        
         <IonRouterOutlet>
+          <h1> Confirme</h1>
           <SignaleoRoute />
         </IonRouterOutlet>
+
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="home" href="/login">
+            <IonIcon icon={playCircle} />
+            <IonLabel>Listen now</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="radio" href="/page2">
+            <IonIcon icon={radio} />
+            <IonLabel>Radio</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="library" href="/page3">
+            <IonIcon icon={library} />
+            <IonLabel>Library</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="search" href="/page4">
+            <IonIcon icon={search} />
+            <IonLabel>Search</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+        
+      {/* <IonContent>
+      <AppRouter />
+      </IonContent> */}
+     
+
       </IonTabs>
     </IonReactRouter>
-    {/* <IonContent>
-      <AppRouter />
-      </IonContent>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="home" href="/page1">
-          <IonIcon icon={playCircle} />
-          <IonLabel>Listen now</IonLabel>
-        </IonTabButton>
 
-        <IonTabButton tab="radio" href="/page2">
-          <IonIcon icon={radio} />
-          <IonLabel>Radio</IonLabel>
-        </IonTabButton>
 
-        <IonTabButton tab="library" href="/page3">
-          <IonIcon icon={library} />
-          <IonLabel>Library</IonLabel>
-        </IonTabButton>
-
-        <IonTabButton tab="search" href="/page4">
-          <IonIcon icon={search} />
-          <IonLabel>Search</IonLabel>
-        </IonTabButton>
-      </IonTabBar> */}
   </IonApp>
 );
 
