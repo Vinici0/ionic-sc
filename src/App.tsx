@@ -57,16 +57,15 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
-        
+
         <IonRouterOutlet>
-          <h1> Confirme</h1>
           <SignaleoRoute />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/login">
+          <IonTabButton tab="home" href="/home">
             <IonIcon icon={playCircle} />
-            <IonLabel>Listen now</IonLabel>
+            <IonLabel>Menu</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="radio" href="/page2">
@@ -84,16 +83,8 @@ const App: React.FC = () => (
             <IonLabel>Search</IonLabel>
           </IonTabButton>
         </IonTabBar>
-        
-      {/* <IonContent>
-      <AppRouter />
-      </IonContent> */}
-     
-
       </IonTabs>
     </IonReactRouter>
-
-
   </IonApp>
 );
 

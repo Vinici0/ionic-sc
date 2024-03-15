@@ -8,6 +8,8 @@ import Tab2 from "../../pages/Tab2";
 import Tab3 from "../../pages/Tab3";
 import Tab4 from "../../pages/Tab4";
 import Login from "../../pages/Login";
+import Home from "../../pages/home/Home";
+
 
 const SignaleoRoute: React.FC = () => {
   const user: User = {
@@ -33,6 +35,7 @@ const SignaleoRoute: React.FC = () => {
           <Route path="/page2" component={Tab2} exact />
           <Route path="/page3" component={Tab3} exact />
           <Route path="/page4" component={Tab4} exact />
+          <Route path="/home" component={Home}  exact />
           <Route path="/" render={() => <Redirect to="/page1" />} exact />
         </IonRouterOutlet>
   );
