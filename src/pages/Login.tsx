@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   IonHeader,
   IonToolbar,
@@ -14,10 +14,10 @@ import {
   IonItem,
   IonInput,
   IonText,
-} from '@ionic/react';
-// import './Login.scss';
+} from "@ionic/react";
+import './Login.css';
 
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from "react-router";
 
 interface OwnProps extends RouteComponentProps {}
 
@@ -29,8 +29,8 @@ interface OwnProps extends RouteComponentProps {}
 interface LoginProps extends OwnProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -44,21 +44,19 @@ const Login: React.FC<LoginProps> = () => {
     if (!password) {
       setPasswordError(true);
     }
-
-
   };
 
   return (
     <IonPage id="login-page">
-      <IonHeader>
+      {/* <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
           <IonTitle>Login</IonTitle>
         </IonToolbar>
-      </IonHeader>
-      <IonContent>
+      </IonHeader> */}
+      <IonContent className="ion-padding"  fullscreen id="container">
         <div className="login-logo">
           <img src="assets/img/appicon.svg" alt="Ionic logo" />
         </div>
@@ -122,5 +120,5 @@ const Login: React.FC<LoginProps> = () => {
     </IonPage>
   );
 };
-             
+
 export default Login;

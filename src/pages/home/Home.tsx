@@ -35,9 +35,11 @@ import {
   trash,
   person,
 } from "ionicons/icons";
+
 import "./Home.css";
 import { LIST_ITEM, SEGMENT_BUTTONS } from "../../constant/constants";
 import MenuContent from "../../components/MenuContent";
+import { useHistory } from "react-router";
 
 const Home: React.FC = () => {
   const [segment, setSegment] = useState<"all" | "favorites">("all");
@@ -47,7 +49,7 @@ const Home: React.FC = () => {
   };
 
   const pageRef = useRef<HTMLElement>(null);
-
+  const history = useHistory();
   return (
     <>
       <MenuContent />
@@ -68,8 +70,7 @@ const Home: React.FC = () => {
                   key={b.value}
                   value={b.value}
                   onClick={() => {
-                    setSegment(b.value as any);
-                    
+                    history.push(b.path);
                   }}
                 >
                   <IonText>{b.label}</IonText>
@@ -81,11 +82,11 @@ const Home: React.FC = () => {
               <IonCardTitle>777774 / 2</IonCardTitle>
               <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
             </IonCardHeader>
+
             <IonCardContent>
               <IonList
                 onClick={(e) => {
                   getItemData(e);
-
                 }}
               >
                 {LIST_ITEM.map((item, index) => (

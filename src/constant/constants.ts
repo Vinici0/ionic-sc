@@ -1,5 +1,7 @@
 import { heart, pin, star, call, globe, basket, barbell } from "ionicons/icons";
 
+
+
 export const SEGMENT_BUTTONS = [
   { value: "1", label: "Comandos", icon: null , path: "/home" },
   { value: "2", label: "Eventos", icon: heart , path: "/home/event" },

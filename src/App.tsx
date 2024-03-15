@@ -27,7 +27,7 @@ import {
 } from "@ionic/react";
 import { playCircle, radio, library, search } from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
-import Home from "./pages/Home";
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -68,12 +68,12 @@ const App: React.FC = () => (
             <IonLabel>Menu</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="radio" href="/page2">
+          <IonTabButton tab="radio" href="/home/event">
             <IonIcon icon={radio} />
             <IonLabel>Radio</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="library" href="/page3">
+          <IonTabButton tab="library" href="/login">
             <IonIcon icon={library} />
             <IonLabel>Library</IonLabel>
           </IonTabButton>
