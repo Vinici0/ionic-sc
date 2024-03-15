@@ -4,19 +4,17 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
+  IonPage,
 } from "@ionic/react";
+import MenuContent from "../../components/MenuContent";
 
 const EventPage = () => {
   return (
     <>
-      <IonContent fullscreen>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>777774 / 2</IonCardTitle>
-            <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonContent>
+      <MenuContent />
+      <IonPage id="main-content">
+        <h2>Confirme para confirmar</h2>
+      </IonPage>
     </>
   );
 };
