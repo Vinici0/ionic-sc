@@ -19,9 +19,25 @@ import {
   IonThumbnail,
   IonTitle,
   IonToolbar,
+  IonIcon,
+  IonText,
 } from "@ionic/react";
-import "./Home.css";
 
+import {
+  call,
+  globe,
+  heart,
+  home,
+  pin,
+  star,
+  basket,
+  barbell,
+  trash,
+  person,
+} from "ionicons/icons";
+import "./Home.css";
+import { LIST_ITEM, SEGMENT_BUTTONS } from "../../constant/constants";
+import MenuContent from "../../components/MenuContent";
 
 const Home: React.FC = () => {
   const [segment, setSegment] = useState<"all" | "favorites">("all");
@@ -34,16 +50,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <IonMenu contentId="main-content">
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Menu Content</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-          This is the menu content.
-        </IonContent>
-      </IonMenu>
+      <MenuContent />
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar>
@@ -55,84 +62,45 @@ const Home: React.FC = () => {
         </IonHeader>
         <IonContent fullscreen>
           <IonCard>
+            <IonSegment scrollable={true} value="heart">
+              {SEGMENT_BUTTONS.map((b) => (
+                <IonSegmentButton
+                  key={b.value}
+                  value={b.value}
+                  onClick={() => {
+                    setSegment(b.value as any);
+                    
+                  }}
+                >
+                  <IonText>{b.label}</IonText>
+                </IonSegmentButton>
+              ))}
+            </IonSegment>
+
             <IonCardHeader>
               <IonCardTitle>777774 / 2</IonCardTitle>
               <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
             </IonCardHeader>
             <IonCardContent>
-              <IonList onClick={getItemData}>
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Alarma</IonLabel>
-                </IonItem>
+              <IonList
+                onClick={(e) => {
+                  getItemData(e);
 
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Alarma (Estoy en casa)</IonLabel>
-                </IonItem>
-
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Desarmar</IonLabel>
-                </IonItem>
-
-                <IonItem lines="none">
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Solicitar el estado de panel</IonLabel>
-                </IonItem>
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Activar Salida</IonLabel>
-                </IonItem>
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Desactivar Salida</IonLabel>
-                </IonItem>
-                <IonItem>
-                  <IonThumbnail slot="start">
-                    <img
-                      alt="Silhouette of mountains"
-                      src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                    />
-                  </IonThumbnail>
-                  <IonLabel>Solicitar estado de salidas</IonLabel>
-                </IonItem>
+                }}
+              >
+                {LIST_ITEM.map((item, index) => (
+                  <IonItem key={index}>
+                    <IonThumbnail slot="start">
+                      <img src={item.urlImage} alt="thumbnail" />
+                    </IonThumbnail>
+                    <IonLabel>{item.label}</IonLabel>
+                  </IonItem>
+                ))}
               </IonList>
             </IonCardContent>
           </IonCard>
         </IonContent>
       </IonPage>
- 
     </>
   );
 };
