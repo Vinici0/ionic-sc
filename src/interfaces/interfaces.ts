@@ -57,3 +57,10 @@ export interface UserEmp {
   }
   
   
+export interface EventDetailProps {
+  id: number;
+  date: string;
+  zone: string;
+  event: string;
+  description: string;
+}
