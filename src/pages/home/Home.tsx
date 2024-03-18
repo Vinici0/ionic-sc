@@ -11,45 +11,27 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonMenu,
   IonMenuButton,
   IonPage,
-  IonSegment,
-  IonSegmentButton,
   IonThumbnail,
   IonTitle,
   IonToolbar,
-  IonIcon,
-  IonText,
 } from "@ionic/react";
 
-import {
-  call,
-  globe,
-  heart,
-  home,
-  pin,
-  star,
-  basket,
-  barbell,
-  trash,
-  person,
-} from "ionicons/icons";
 
-import "./Home.css";
-import { LIST_ITEM, SEGMENT_BUTTONS } from "../../constant/constants";
-import MenuContent from "../../components/MenuContent";
-import { useHistory } from "react-router";
+import MenuContent from "../../components/MenuContent"
+import { LIST_ITEM } from "../../constant/constants"
+import { EventDetail, LateralMenuList, StateObject } from "./components";
+
 
 const Home: React.FC = () => {
-  const [segment, setSegment] = useState<"all" | "favorites">("all");
+
+  const [selectedButton, setSelectedButton] = useState<string>("all");
 
   const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
     console.log(e.currentTarget);
   };
 
-  const pageRef = useRef<HTMLElement>(null);
-  const history = useHistory();
   return (
     <>
       <MenuContent />
@@ -64,19 +46,10 @@ const Home: React.FC = () => {
         </IonHeader>
         <IonContent fullscreen>
           <IonCard>
-            <IonSegment scrollable={true} value="heart">
-              {SEGMENT_BUTTONS.map((b) => (
-                <IonSegmentButton
-                  key={b.value}
-                  value={b.value}
-                  onClick={() => {
-                    history.push(b.path);
-                  }}
-                >
-                  <IonText>{b.label}</IonText>
-                </IonSegmentButton>
-              ))}
-            </IonSegment>
+            <LateralMenuList
+              selectedButton={selectedButton}
+              setSelectedButton={setSelectedButton}
+            />
 
             <IonCardHeader>
               <IonCardTitle>777774 / 2</IonCardTitle>
@@ -89,14 +62,20 @@ const Home: React.FC = () => {
                   getItemData(e);
                 }}
               >
-                {LIST_ITEM.map((item, index) => (
-                  <IonItem key={index}>
-                    <IonThumbnail slot="start">
-                      <img src={item.urlImage} alt="thumbnail" />
-                    </IonThumbnail>
-                    <IonLabel>{item.label}</IonLabel>
-                  </IonItem>
-                ))}
+                {selectedButton === "event" && <EventDetail />}
+
+                {selectedButton === "home" &&
+                  LIST_ITEM.map((item, index) => (
+                    <IonItem key={index}>
+                      <IonThumbnail slot="start">
+                        <img src={item.urlImage} alt="thumbnail" />
+                      </IonThumbnail>
+                      <IonLabel>{item.label}</IonLabel>
+                    </IonItem>
+                  ))}
+
+                {selectedButton === "state" && <StateObject />}
+
               </IonList>
             </IonCardContent>
           </IonCard>
