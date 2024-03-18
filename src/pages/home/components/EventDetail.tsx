@@ -1,10 +1,6 @@
 import {
-  IonCol,
-  IonGrid,
   IonItemDivider,
   IonLabel,
-  IonRow,
-  IonText,
   IonTitle,
 } from "@ionic/react";
 
