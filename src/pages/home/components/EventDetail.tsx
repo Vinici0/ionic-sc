@@ -2,6 +2,7 @@ import {
   IonText,
 } from "@ionic/react";
 
+
 export const EventDetail = () => {
   return (
     <>
