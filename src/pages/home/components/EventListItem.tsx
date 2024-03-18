@@ -19,17 +19,17 @@ export const EventListItem: React.FC<EventDetailObjectProps> = (
 ) => {
   const { eventDetailProps } = eventDetailObjectProps;
   return (
-    <IonItemSliding>
+    <IonItemSliding color="light">
       <IonItem routerLink={`/tabs/schedule/${eventDetailProps.id}`}>
         <IonLabel>
-          <h3>{eventDetailProps.zone}</h3>
+          <h3>{eventDetailProps.event}</h3>
           <p>
-            {eventDetailProps.zone}&mdash;&nbsp;
-            {eventDetailProps.description}&mdash;&nbsp;
+            {eventDetailProps.date} &mdash;&nbsp;
             {eventDetailProps.description}
           </p>
         </IonLabel>
       </IonItem>
+
       <IonItemOptions>
         <IonItemOption color="favorite">Favorite</IonItemOption>
       </IonItemOptions>

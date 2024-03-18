@@ -1,8 +1,4 @@
-import {
-  IonItemDivider,
-  IonLabel,
-  IonTitle,
-} from "@ionic/react";
+import { IonItemDivider, IonLabel, IonTitle } from "@ionic/react";
 
 import "./Statyles.css";
 import { EventDetailProps } from "../../../interfaces/interfaces";
@@ -75,9 +71,15 @@ export const EventDetail: React.FC = () => {
         <IonLabel>15/14</IonLabel>
       </IonItemDivider>
       {/* Mapea cada elemento de EventDetailList y pasa cada objeto como prop a SessionListItem */}
-      {EventDetailList.map((eventDetailProps: EventDetailProps, index:number) => (
-        <EventListItem key={index}  eventDetailProps={eventDetailProps} number={index} />
-      ))}
+      {EventDetailList.map(
+        (eventDetailProps: EventDetailProps, index: number) => (
+          <EventListItem
+            key={index}
+            eventDetailProps={eventDetailProps}
+            number={index}
+          />
+        )
+      )}
     </>
   );
 };
