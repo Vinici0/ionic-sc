@@ -66,7 +66,7 @@ const EventDetailList: EventDetailProps[] = [
 export const EventDetail: React.FC = () => {
   return (
     <>
-      <IonTitle color="primary">Eventos</IonTitle>
+      {/* <IonTitle color="primary">Eventos</IonTitle> */}
       <IonItemDivider sticky>
         <IonLabel>15/14</IonLabel>
       </IonItemDivider>

@@ -62,11 +62,10 @@ const Home: React.FC = () => {
                 <IonLabel>{item.label}</IonLabel>
               </IonItem>
             ))}
-          <div className="ion-padding">
-            {selectedButton === "event" && <EventDetail />}
-            {selectedButton === "state" && <StateObject />}
-            {selectedButton === "zone" && <Zones />}
-          </div>
+
+          {selectedButton === "event" && <EventDetail />}
+          {selectedButton === "state" && <StateObject />}
+          {selectedButton === "zone" && <Zones />}
         </IonContent>
       </IonPage>
     </>

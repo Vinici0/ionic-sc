@@ -29,18 +29,17 @@ export const Zones = () => {
 
       <div
         className="bg-color
-        ion-padding ion-margin-top ion-margin-bottom ionion-margin-vertical 
+        ion-padding ion-margin-top ion-margin-bottom ion-ion-margin-vertical 
       "
       >
-        <IonGrid>
-          <IonRow class="ion-justify-content-center">
-            <IonCol class="">#</IonCol>
+        <IonGrid class="ion-justify-content-between ion-text-center">
+          <IonRow>
+            <IonCol>#</IonCol>
             <IonCol>Nombre</IonCol>
             <IonCol>Estado</IonCol>
           </IonRow>
-            <hr />
-          <IonRow class="ion-justify-content-between ion-text-center ">
-            <IonCol class="">1</IonCol>
+          <IonRow>
+            <IonCol>1</IonCol>
             <IonCol>Probando como va</IonCol>
             {/* Icono de visto verde */}
             <IonCol>
@@ -48,8 +47,8 @@ export const Zones = () => {
             </IonCol>
           </IonRow>
 
-          <IonRow class="ion-justify-content-between ion-text-center">
-            <IonCol class="">2</IonCol>
+          <IonRow>
+            <IonCol >2</IonCol>
             <IonCol>Importante</IonCol>
             <IonCol>
               <IonIcon icon={checkmarkCircleOutline} color="success" />{" "}
