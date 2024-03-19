@@ -1,5 +1,5 @@
 import { IonSegment, IonSegmentButton, IonText } from "@ionic/react";
-import { SEGMENT_BUTTONS } from "../../../constant/constants";
+import { SEGMENT_BUTTONS } from "../../constant/constants";
 import { useState } from "react";
 
 interface LateralMenuListProps {

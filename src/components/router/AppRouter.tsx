@@ -4,9 +4,9 @@ import { Redirect, Route } from "react-router";
 import Tab3 from "../../pages/Tab3";
 import Tab4 from "../../pages/Tab4";
 import Login from "../../pages/Login";
-import Home from "../../pages/home/Home";
+import Home from "../../pages/Home";
 
-import { EventDetail } from "../../pages/home/components";
+import { EventDetail } from "../home";
 
 
 const SignaleoRoute: React.FC = () => {
@@ -14,6 +14,7 @@ const SignaleoRoute: React.FC = () => {
     <IonRouterOutlet id="main">
       <Route path="/login" component={Login} exact />
       <Route path="/home/event" component={EventDetail} exact />
+      
       <Route path="/page3" component={Tab3} exact />
       <Route path="/page4" component={Tab4} exact />
       <Route path="/home" component={Home} exact />

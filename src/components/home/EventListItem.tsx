@@ -7,7 +7,7 @@ import {
   IonItemOption,
 } from "@ionic/react";
 
-import { EventDetailProps } from "../../../interfaces/interfaces";
+import { EventDetailProps } from "../../interfaces/interfaces";
 
 interface EventDetailObjectProps {
   eventDetailProps: EventDetailProps;

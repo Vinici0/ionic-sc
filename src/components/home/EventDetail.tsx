@@ -1,7 +1,7 @@
 import { IonItemDivider, IonLabel, IonTitle } from "@ionic/react";
 
 import "./Statyles.css";
-import { EventDetailProps } from "../../../interfaces/interfaces";
+import { EventDetailProps } from "../../interfaces/interfaces";
 import { EventListItem } from "./EventListItem";
 
 const EventDetailList: EventDetailProps[] = [
