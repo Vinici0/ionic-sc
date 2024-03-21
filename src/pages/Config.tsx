@@ -27,6 +27,9 @@ export default function ConfigPage() {
               />
             </IonAvatar>
           </div>
+
+          {/* datos de actualizacino del usuario */}
+     
         </IonContent>
       </IonPage>
     </>

@@ -21,6 +21,7 @@ import { LIST_ITEM } from "../constant/constants";
 import { EventDetail, LateralMenuList, StateObject } from "../components/home";
 import { Zones } from "../components/home/Zones";
 import "./Home.css";
+import CarButton from "../components/home/CarButton";
 
 const Home: React.FC = () => {
   
@@ -56,7 +57,7 @@ const Home: React.FC = () => {
             <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
           </IonCardHeader>
 
-          {selectedButton === "home" &&
+          {/* {selectedButton === "home" &&
             LIST_ITEM.map((item, index) => (
               <IonItem key={index}>
                 <IonThumbnail slot="start">
@@ -64,8 +65,8 @@ const Home: React.FC = () => {
                 </IonThumbnail>
                 <IonLabel>{item.label}</IonLabel>
               </IonItem>
-            ))}
-
+            ))} */}
+          {selectedButton === "home" && <CarButton />}
           {selectedButton === "event" && <EventDetail />}
           {selectedButton === "state" && <StateObject />}
           {selectedButton === "zone" && <Zones />}
