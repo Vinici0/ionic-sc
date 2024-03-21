@@ -32,7 +32,6 @@ import "../theme/main-custom.css";
 
 import { Redirect, Route } from "react-router";
 import Tab3 from "./Tab3";
-import Tab4 from "./Tab4";
 import Home from "./Home";
 import ConfigPage from "./Config";
 import "../theme/main-custom.css";
@@ -44,7 +43,7 @@ const HomeTabs: React.FC = () => (
     <IonRouterOutlet>
       <Route path="/page/event" component={Tab3} exact />
       <Route path="/page3" component={Tab3} exact />
-      <Route path="/page4" component={Tab4} exact />
+      <Route path="/page4" component={Tab3} exact />
       <Route path="/page/home" component={Home} exact />
       <Route path="/page/config" component={ConfigPage} exact />
       <Redirect exact from="/" to="/home" />

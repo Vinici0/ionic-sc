@@ -1,8 +1,6 @@
 import { IonAvatar, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import "./Config.css";
 import "../theme/main-custom.css";
 
-import "./Config.css";
 export default function ConfigPage() {
   return (
     <>
