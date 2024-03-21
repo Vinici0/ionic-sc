@@ -13,7 +13,7 @@ const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar className="bg-blue">
           <IonTitle>Tab 3</IonTitle>
         </IonToolbar>
       </IonHeader>

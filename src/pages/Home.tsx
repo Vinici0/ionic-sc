@@ -1,8 +1,7 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+
 import {
   IonButtons,
-  IonCard,
-  IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
@@ -10,7 +9,6 @@ import {
   IonHeader,
   IonItem,
   IonLabel,
-  IonList,
   IonMenuButton,
   IonPage,
   IonThumbnail,
@@ -18,31 +16,36 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-import MenuContent from "../components/MenuContent";
+import {MenuContent} from "../components/MenuContent";
 import { LIST_ITEM } from "../constant/constants";
 import { EventDetail, LateralMenuList, StateObject } from "../components/home";
 import { Zones } from "../components/home/Zones";
+import "./Home.css";
 
 const Home: React.FC = () => {
-  const [selectedButton, setSelectedButton] = useState<string>("all");
-
+  
+  const [selectedButton, setSelectedButton] = useState<string>("home");
+  
   const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
     console.log(e.currentTarget);
   };
 
   return (
-    <>
+    <div className="fon-garet">
       <MenuContent />
       <IonPage id="main-content">
+
         <IonHeader>
-          <IonToolbar>
+          <IonToolbar className="bg-blue">
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
             <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
+
         <IonContent fullscreen>
+
           <LateralMenuList
             selectedButton={selectedButton}
             setSelectedButton={setSelectedButton}
@@ -68,7 +71,7 @@ const Home: React.FC = () => {
           {selectedButton === "zone" && <Zones />}
         </IonContent>
       </IonPage>
-    </>
+    </div>
   );
 };
 
