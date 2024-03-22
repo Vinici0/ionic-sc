@@ -28,8 +28,7 @@ import { useHistory } from "react-router";
 
 import "./Profile.css";
 
-const Profile = () => {
-  
+const ProfilePage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -50,7 +49,6 @@ const Profile = () => {
 
   return (
     <>
-
       <IonPage id="config-page">
         <IonHeader class="ion-no-border">
           <IonToolbar>
@@ -98,7 +96,7 @@ const Profile = () => {
                 typeUdate="Nombre"
                 userValue={user.nombre}
                 history={history}
-                onClick={(path) => history.push(`/page/edit/${path}`)}
+                onClick={(path) => history.push(`/page/setting/editName`)}
               />
               <IonItemSlidingProfile
                 typeUdate="Correo"
@@ -128,7 +126,7 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;
 
 interface IonItemSlidingProfileProps {
   typeUdate: string;
@@ -136,6 +134,7 @@ interface IonItemSlidingProfileProps {
   history: any;
   onClick: (path: string) => void;
 }
+
 const IonItemSlidingProfile = ({
   typeUdate = "Perfil",
   userValue,
@@ -144,10 +143,13 @@ const IonItemSlidingProfile = ({
 IonItemSlidingProfileProps) => {
   return (
     <IonItemSliding>
+      {/*  path="/page/settingTabs/editName" */}
       <IonItem
-      //  button onClick={() => onClick(user.nombre)}
+        button
+        onClick={() => history.push("/page/setting/editName")}
+        className="full-width"
       >
-        <IonGrid>
+        <IonGrid class="ion-padding-horizontal">
           <IonRow>
             <IonCol>
               <IonLabel>

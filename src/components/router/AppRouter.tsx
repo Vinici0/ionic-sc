@@ -16,9 +16,10 @@ import { navagatoinSelector } from "../../store/navigation/slice";
 import { useAppSelector } from "../../store";
 import Home from "../../pages/home/Home";
 import LoginPage from "../../pages/login/Login";
-import Profile from "../../pages/profile/Profile";
-import Setting from "../../pages/setting/Setting";
+import ProfilePage from "../../pages/profile/Profile";
+import SettingPage from "../../pages/setting/Setting";
 import Tab3 from "../../pages/Tab3";
+import EditNamePage from "../../pages/profile/EditName";
 
 setupIonicReact();
 
@@ -36,8 +37,9 @@ const SignaleoRoute: React.FC = () => {
             <Route path="/page/event" component={Tab3} exact />
             <Route path="/page/home" component={Home}  />
             <Route path="/page/login" component={LoginPage} exact={true} />
-            <Route path="/page/setting" component={Setting} exact />
-            <Route path="/page/settingTabs/profile" component={Profile} />
+            <Route path="/page/setting" component={SettingPage} exact />
+            <Route path="/page/settingTabs/profile" component={ProfilePage} />
+            <Route path="/page/setting/editName" component={EditNamePage} />
             
           </IonRouterOutlet>
           <IonTabBar slot="bottom" id="page-tabar" style={{ display: tabBarStyle ? "flex" : "none" }}>  

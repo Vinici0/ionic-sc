@@ -15,3 +15,8 @@ ion-header {
   .ion-text-center {
     text-align: center !important;
   }
+
+  .full-width {
+    --padding-start: 0;
+    --padding-end: 0;
+  }

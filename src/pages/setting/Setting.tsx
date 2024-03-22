@@ -21,7 +21,7 @@ import {
 } from "ionicons/icons";
 import { useHistory } from "react-router";
 
-function Setting() {
+function SettingPage() {
   const history = useHistory();
 
   return (
@@ -90,4 +90,4 @@ function Setting() {
   );
 }
 
-export default Setting;
+export default SettingPage;
