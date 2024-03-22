@@ -5,6 +5,7 @@ import {
   IonButtons,
   IonBackButton,
   IonTitle,
+  IonContent,
 } from "@ionic/react";
 import "./Profile.css";
 import { useEffect } from "react";
@@ -20,7 +21,7 @@ function EditNamePage() {
       dispatch(setShowTabs(true));
     };
   }, [dispatch]);
-  
+
   return (
     <>
       <IonPage id="config-page">
@@ -34,6 +35,9 @@ function EditNamePage() {
           </IonToolbar>
         </IonHeader>
       </IonPage>
+      <IonContent>
+        <IonTitle>Para editar Name</IonTitle>
+      </IonContent>
     </>
   );
 }
