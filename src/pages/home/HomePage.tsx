@@ -20,14 +20,31 @@ import {
   IonCardContent,
 } from "@ionic/react";
 import MenuContent from "../../components/MenuContent";
-import { LIST_ITEM, SEGMENT_BUTTONS } from "../../constant/constants";
+import { LIST_ITEM } from "../../constant/constants";
+import { heart, pin, star, call, globe, basket, barbell } from "ionicons/icons";
 
-const EventPage = () => {
+const HomePage = () => {
+  const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
+    console.log(e.currentTarget);
+  };
   return (
     <>
-
-<IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
-
+      <IonCardContent>
+        <IonTitle>Home Page</IonTitle>
+        <IonList
+          onClick={(e) => {
+            getItemData(e);
+          }}
+        >
+          {LIST_ITEM.map((item, index) => (
+            <IonItem key={index}>
+              <IonThumbnail slot="start">
+                <img src={item.urlImage} alt="thumbnail" />
+              </IonThumbnail>
+              <IonLabel>{item.label}</IonLabel>
+            </IonItem>
+          ))}
+        </IonList>
         {/* <IonCard>
             <IonSegment scrollable={true} value="heart">
               {SEGMENT_BUTTONS.map((b) => (
@@ -52,9 +69,9 @@ const EventPage = () => {
               <IonText>Event Page</IonText>
             </IonCardContent>
           </IonCard> */}
-
+      </IonCardContent>
     </>
   );
 };
 
-export default EventPage;
+export default HomePage;

@@ -22,12 +22,12 @@ import {
 import MenuContent from "../../components/MenuContent";
 import { LIST_ITEM, SEGMENT_BUTTONS } from "../../constant/constants";
 
-const EventPage = () => {
+const StatePage = () => {
   return (
     <>
+      <IonCardContent>
 
-<IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
-
+        <IonTitle>State Page</IonTitle>
         {/* <IonCard>
             <IonSegment scrollable={true} value="heart">
               {SEGMENT_BUTTONS.map((b) => (
@@ -51,10 +51,12 @@ const EventPage = () => {
             <IonCardContent>
               <IonText>Event Page</IonText>
             </IonCardContent>
+
           </IonCard> */}
+      </IonCardContent>
 
     </>
   );
 };
 
-export default EventPage;
+export default StatePage;

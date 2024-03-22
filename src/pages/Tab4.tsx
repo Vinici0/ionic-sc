@@ -5,18 +5,22 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  IonButtons,
+  IonMenuButton,
 } from "@ionic/react";
 import ExploreContainer from "../components/ExploreContainer";
-// import './Tab2.css';
 
 const Tab4: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 4</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonMenuButton></IonMenuButton>
+            </IonButtons>
+            <IonTitle>Tab 4</IonTitle>
+          </IonToolbar>
+        </IonHeader>
       <IonContent fullscreen>
         <div className="container">
           <strong>{"awdawda"}</strong>
