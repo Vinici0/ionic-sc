@@ -8,8 +8,6 @@
   --color: rgb(18, 68, 143);  
 }
 
-/* color text */
-
 #login-page ion-card {
   --background: transparent;
   box-shadow: none;

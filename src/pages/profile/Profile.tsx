@@ -1,16 +1,26 @@
-import { IonAvatar, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import "../theme/main-custom.css";
+import {
+  IonAvatar,
+  IonBackButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
 
-export default function ConfigPage() {
+const Profile = () => {
   return (
     <>
-      {/* <MenuContent /> */}
       <IonPage id="config-page">
-      <IonHeader >
-        <IonToolbar className="bg-blue">
-          <IonTitle>Editar Perfil</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+        <IonHeader>
+          <IonToolbar className="bg-blue">
+            <IonButtons slot="start">
+              <IonBackButton></IonBackButton>
+            </IonButtons>
+            <IonTitle>Configuración</IonTitle>
+          </IonToolbar>
+        </IonHeader>
         <IonContent fullscreen className="ion-padding">
           <div
             style={{
@@ -27,11 +37,10 @@ export default function ConfigPage() {
               />
             </IonAvatar>
           </div>
-
-          {/* datos de actualizacino del usuario */}
-     
         </IonContent>
       </IonPage>
     </>
   );
-}
+};
+
+export default Profile;

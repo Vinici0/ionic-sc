@@ -25,99 +25,23 @@ const listNameButton = [
   {
     name: "Contacto",
   },
+  {
+    name: "Contacto",
+  },
 ];
 
 const CarButton = () => {
   return (
     <>
       <IonGrid>
-        {/* dos columas de una litta de botoes */}
-        <IonRow style={{
+        <IonRow
+          style={{
             display: "flex",
             justifyContent: "center",
             marginTop: "20px",
-        }}>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
+          }}
+        >
+          <IonCol size="6" sizeSm="4" sizeMd="3" sizeLg="2">
             <IonButton
               color="light"
               expand="block"
@@ -128,27 +52,18 @@ const CarButton = () => {
             </IonButton>
           </IonCol>
 
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          <IonCol size="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-          
+          {listNameButton.map((item, index) => (
+            <IonCol size="6" sizeSm="4" sizeMd="3" sizeLg="2" key={index}>
+              <IonButton
+                color="light"
+                expand="block"
+                className="btn-car"
+                style={{ marginTop: "10px" }}
+              >
+                <p className="text-center">{item.name}</p>
+              </IonButton>
+            </IonCol>
+          ))}
         </IonRow>
       </IonGrid>
     </>

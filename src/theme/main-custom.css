@@ -169,6 +169,15 @@
   animation: fade-in 1s ease-in-out;
 }
 
+.account-bac{
+  background-color: #f4f5f8;
+  padding: 0.5rem;
+}
+
+.custom-background {
+  --background: #f4f5f8; /* Cambia esto al color que desees */
+}
+
 ion-button.btn-blue {
   --background: var(--ion-button-blue);
   --color: var(--ion-button-blue-text);
@@ -238,7 +247,10 @@ ion-header ion-toolbar.bg-blue > ion-buttons ion-button {
   --color: #fff;
 }
 
-z
+ion-menu-toggle ion-button {
+  --border-color: rgb(18, 68, 143);
+  --color: rgb(18, 68, 143);
+}
 
 ion-content ion-list ion-item-group ion-item-divider {
   border-bottom: 2px solid var(--ion-item-divider-border);

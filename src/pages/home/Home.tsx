@@ -7,21 +7,19 @@ import {
   IonCardTitle,
   IonContent,
   IonHeader,
-  IonItem,
-  IonLabel,
   IonMenuButton,
   IonPage,
-  IonThumbnail,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 
-import {MenuContent} from "../components/MenuContent";
-import { LIST_ITEM } from "../constant/constants";
-import { EventDetail, LateralMenuList, StateObject } from "../components/home";
-import { Zones } from "../components/home/Zones";
 import "./Home.css";
-import CarButton from "../components/home/CarButton";
+
+import { EventDetail, LateralMenuList, StateObject } from "../../components/home";
+import {MenuContent} from "../../components/MenuContent";
+import { Zones } from "../../components/home/Zones";
+import CarButton from "../../components/home/CarButton";
+
 
 const Home: React.FC = () => {
   
@@ -46,7 +44,6 @@ const Home: React.FC = () => {
         </IonHeader>
 
         <IonContent fullscreen>
-
           <LateralMenuList
             selectedButton={selectedButton}
             setSelectedButton={setSelectedButton}
@@ -57,15 +54,7 @@ const Home: React.FC = () => {
             <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
           </IonCardHeader>
 
-          {/* {selectedButton === "home" &&
-            LIST_ITEM.map((item, index) => (
-              <IonItem key={index}>
-                <IonThumbnail slot="start">
-                  <img src={item.urlImage} alt="thumbnail" />
-                </IonThumbnail>
-                <IonLabel>{item.label}</IonLabel>
-              </IonItem>
-            ))} */}
+
           {selectedButton === "home" && <CarButton />}
           {selectedButton === "event" && <EventDetail />}
           {selectedButton === "state" && <StateObject />}
