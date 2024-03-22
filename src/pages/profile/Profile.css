@@ -1,0 +1,17 @@
+
+ion-header {
+    --background: #fff;
+    --border-width: 0;
+  }
+
+  .ion-justify-content-center {
+    justify-content: center !important;
+  }
+  
+  .ion-align-items-center {
+    align-items: center !important;
+  }
+  
+  .ion-text-center {
+    text-align: center !important;
+  }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RouteComponentProps, useHistory } from "react-router";
 import { arrowForwardCircleOutline, personCircle } from "ionicons/icons";
 import {
@@ -18,6 +18,8 @@ import {
 import axios from "axios";
 
 import "./Login.css";
+import { useAppDispatch } from "../../store";
+import { setShowTabs } from "../../store/navigation/slice";
 
 interface OwnProps extends RouteComponentProps {}
 interface LoginProps extends OwnProps {}
@@ -33,6 +35,16 @@ const LoginPage: React.FC<LoginProps> = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setShowTabs(false));
+
+    return () => {
+      dispatch(setShowTabs(true));
+    };
+  }, [dispatch]);
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,10 +114,9 @@ const LoginPage: React.FC<LoginProps> = () => {
                 <IonRow>
                   <IonCol>
                     <IonIcon
-                    className="my-1 login"
+                      className="my-1 login"
                       icon={personCircle}
                       style={{ fontSize: "125px" }}
-
                     ></IonIcon>
                   </IonCol>
                 </IonRow>
@@ -155,7 +166,6 @@ const LoginPage: React.FC<LoginProps> = () => {
                     <IonButton
                       type="submit"
                       className="flex flex-col my-1 login"
-
                     >
                       Iniciar Sesión
                       <IonIcon slot="end" icon={arrowForwardCircleOutline} />

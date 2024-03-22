@@ -30,13 +30,19 @@ import "@ionic/react/css/display.css";
 import "./theme/main-custom.css";
 import SignaleoRoute from "./components/router/AppRouter";
 
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+
+
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <SignaleoRoute />
-    </IonReactRouter>
+    <Provider store={store}>
+      <IonReactRouter>
+        <SignaleoRoute />
+      </IonReactRouter>
+    </Provider>
   </IonApp>
 );
 

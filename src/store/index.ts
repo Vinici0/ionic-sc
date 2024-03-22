@@ -1,42 +1,4 @@
-import { configureStore, type Middleware } from "@reduxjs/toolkit";
-// import { toast } from 'sonner';
-import usersReducer, { rollbackUser } from "./users/slice";
-
-const persistanceLocalStorageMiddleware: Middleware = (store) => (next) => (action) => {
-	next(action);
-	localStorage.setItem("__redux__state__", JSON.stringify(store.getState()));
-};
-
-// const syncWithDatabaseMiddleware: Middleware = (store) => (next) => (action) => {
-// 	const { type, payload } = action
-// 	const previousState = store.getState() as RootState
-// 	next(action)
-
-// 	if (type === 'users/deleteUserById') { // <- eliminado un usuario
-// 		const userIdToRemove = payload
-// 		const userToRemove = previousState.users.find(user => user.id === userIdToRemove)
-
-// 		fetch(`https://jsonplaceholder.typicode.com/users/${userIdToRemove}`, {
-// 			method: 'DELETE'
-// 		})
-// 			.then(res => {
-// 				throw new Error('Error al eliminar el usuario')
-// 			})
-// 			.catch(err => {
-// 				if (userToRemove) store.dispatch(rollbackUser(userToRemove))
-// 				console.log(err)
-// 				console.log('error')
-// 			})
-// 	}
-// }
-
-export const store = configureStore({
-	reducer: {
-		users: usersReducer,
-	}, 
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(persistanceLocalStorageMiddleware, syncWithDatabaseMiddleware),
-});
-
-
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import type { RootState, AppDispatch } from './store';
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
