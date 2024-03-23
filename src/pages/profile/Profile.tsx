@@ -59,64 +59,57 @@ const ProfilePage = () => {
         </IonHeader>
 
         <IonContent fullscreen className="ion-padding-top">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "20px",
-              flexDirection: "column",
-              alignItems: "center",
-              position: "relative",
-            }}
-          >
-            <IonAvatar className="avatar-with-gradient">
-              <img
-                className="img-avatar"
-                alt="Silhouette of a person's head"
-                src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
-              />
-            </IonAvatar>
+ 
 
-            <IonIcon
-              icon={cameraOutline}
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                fontSize: "30px",
-                color: "white",
-              }}
+          <IonAvatar className="item-avatar">
+            <img
+              className="img-avatar"
+              alt="Silhouette of a person's head"
+              src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
             />
+          </IonAvatar>
+
+          <div className="container-avatar">
+              <h3 className="color-title">
+                Actualizar foto de perfil
+              </h3>
           </div>
+         
 
           <div className="ion-padding-top">
             <IonList>
+              <IonItem lines="full" />
               <IonItemSlidingProfile
                 typeUdate="Nombre"
                 userValue={user.nombre}
                 history={history}
-                onClick={(path) => history.push(`/page/setting/editName`)}
+                onClick={() => history.push(`/page/setting/editName`)}
               />
-              <IonItemSlidingProfile
+              {/* <IonItemSlidingProfile
                 typeUdate="Correo"
                 userValue={user.correo}
                 history={history}
-                onClick={(path) => history.push(`/page/edit/${path}`)}
-              />
+                onClick={() => history.push(`/page/edit/`)}
+              /> */}
               {/* Contrasena */}
-              <IonItemSlidingProfile
+              <IonItemSlidingProfile  
                 typeUdate="Contraseña"
                 userValue="*********"
                 history={history}
-                onClick={(path) => history.push(`/page/edit/${path}`)}
+                onClick={() => history.push(`/page/setting/password`)}
               />
-
               <IonItemSlidingProfile
                 typeUdate="Bibliografía"
                 userValue={user.bibliografia}
                 history={history}
-                onClick={(path) => history.push(`/page/edit/${path}`)}
+                onClick={() => history.push(`/page/edit/`)}
+              />
+              <IonItemSlidingProfile
+                typeUdate="Cuenta"
+                color="danger"
+                userValue="Ir a mi cuenta"
+                history={history}
+                onClick={() => history.push(`/page/myAccount`)}
               />
             </IonList>
           </div>
@@ -132,13 +125,16 @@ interface IonItemSlidingProfileProps {
   typeUdate: string;
   userValue: string;
   history: any;
-  onClick: (path: string) => void;
+  color?: string;
+  onClick: () => void;
 }
 
 const IonItemSlidingProfile = ({
   typeUdate = "Perfil",
   userValue,
+  color,
   history,
+  onClick,
 }: // onClick,
 IonItemSlidingProfileProps) => {
   return (
@@ -146,7 +142,7 @@ IonItemSlidingProfileProps) => {
       {/*  path="/page/settingTabs/editName" */}
       <IonItem
         button
-        onClick={() => history.push("/page/setting/editName")}
+        onClick={() => onClick()}
         className="full-width"
       >
         <IonGrid class="ion-padding-horizontal">
@@ -159,7 +155,10 @@ IonItemSlidingProfileProps) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonLabel>{userValue}</IonLabel>
+              <IonLabel 
+              // class="color-label"
+              class={color === "danger" ? "color-label" : ""}
+              >{userValue}</IonLabel>
             </IonCol>
           </IonRow>
         </IonGrid>

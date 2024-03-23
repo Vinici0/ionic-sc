@@ -195,7 +195,7 @@ ion-button.btn-calendar {
 
 ion-item > ion-input {
   height: 4.6rem;
-  --highlight-color-focused: rgb(18, 68, 143) !important;
+  --highlight-color-focused: #12448f !important;
 }
 
 ion-item > ion-select {
@@ -333,7 +333,7 @@ ion-datetime::part(wheel-item) {
 }
 
 ion-datetime::part(wheel-item active) {
-  color: rgb(18, 33, 121);
+  color: #122179;
 }
 
 @keyframes move-in {
@@ -366,6 +366,15 @@ ion-datetime::part(wheel-item active) {
   }
 }
 
-ion-item {
-  --transition: none;
+
+ion-tab-bar{
+  --color-selected: #12448f !important; 
 }
+
+
+
+
+
+
+
+

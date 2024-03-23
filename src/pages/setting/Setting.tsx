@@ -1,3 +1,5 @@
+import { useHistory } from "react-router";
+
 import {
   IonContent,
   IonHeader,
@@ -19,11 +21,16 @@ import {
   notifications,
   person,
 } from "ionicons/icons";
-import { useHistory } from "react-router";
+
+import "./Setting.css";
 
 function SettingPage() {
   const history = useHistory();
-
+  const signOut = () => {
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    history.push("/page/login");
+  };
   return (
     <>
       <IonPage id="config-page">
@@ -34,14 +41,18 @@ function SettingPage() {
         </IonHeader>
 
         <IonContent fullscreen className="ion-padding">
-          <div>Cuenta</div>
+          <div className="ion-padding-bottom">Cuenta</div>
           <div>
-            <IonList className="custom-background">
+            <IonList className="custom-background border-custom">
               <IonItem
                 className="custom-background"
                 lines="none"
                 button={true}
-                onClick={() => history.push("/page/settingTabs/profile", { direction: "forward" })}
+                onClick={() =>
+                  history.push("/page/setting/profile", {
+                    direction: "forward",
+                  })
+                }
               >
                 <IonIcon slot="start" icon={person} />
                 <IonLabel>Editar Perfil</IonLabel>
@@ -57,9 +68,11 @@ function SettingPage() {
             </IonList>
           </div>
 
-          <div className="ion-padding-top">Soporte & Ayuda</div>
+          <div className="ion-padding-top ion-padding-bottom">
+            Soporte & Ayuda
+          </div>
           <div>
-            <IonList className="custom-background">
+            <IonList className="custom-background border-custom">
               <IonItem className="custom-background" lines="none" button={true}>
                 <IonIcon slot="start" icon={helpCircle} />
                 <IonLabel>Soporte</IonLabel>
@@ -71,14 +84,16 @@ function SettingPage() {
             </IonList>
           </div>
 
-          <div className="ion-padding-top">Acciones</div>
+          <div className="ion-padding-top ion-padding-bottom">Acciones</div>
           <div>
-            <IonList className="custom-background">
+            <IonList className="custom-background border-custom">
               <IonItem className="custom-background" lines="none" button={true}>
                 <IonIcon slot="start" icon={alertCircle} />
                 <IonLabel>Reportar Problema</IonLabel>
               </IonItem>
-              <IonItem className="custom-background" lines="none" button={true}>
+              <IonItem className="custom-background" lines="none" button={true}
+                onClick={() => signOut()}
+              >
                 <IonIcon slot="start" icon={logOut} />
                 <IonLabel>Cerrar Sesión</IonLabel>
               </IonItem>

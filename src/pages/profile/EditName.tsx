@@ -6,11 +6,18 @@ import {
   IonBackButton,
   IonTitle,
   IonContent,
+  IonInput,
+  IonText,
+  IonItem,
+  IonLabel,
+  IonButton,
+  IonIcon,
 } from "@ionic/react";
-import "./Profile.css";
+// import "./Profile.css";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
+import { checkmarkOutline } from "ionicons/icons";
 function EditNamePage() {
   const dispatch = useAppDispatch();
 
@@ -22,6 +29,11 @@ function EditNamePage() {
     };
   }, [dispatch]);
 
+  const defaultValueInput = {
+    name: "Juan",
+    lastname: "Perez",
+  };
+
   return (
     <>
       <IonPage id="config-page">
@@ -30,14 +42,38 @@ function EditNamePage() {
             <IonButtons slot="start">
               <IonBackButton className="black-back-button"></IonBackButton>
             </IonButtons>
-            {/* Boton derecha */}
             <IonTitle>Editar Nombre</IonTitle>
+            <IonButtons slot="end">
+              <IonButton>
+                <IonIcon icon={checkmarkOutline} />
+              </IonButton>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
+        <IonContent>
+          <IonItem>
+            <IonLabel position="floating">Nombre</IonLabel>
+            <IonItem>
+              <IonInput labelPlacement="floating" value={defaultValueInput.name}>
+                <div slot="label">
+                  <IonLabel>Nombre</IonLabel>
+                </div>
+              </IonInput>
+
+              </IonItem>
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Apellido</IonLabel>
+            <IonItem>
+              <IonInput labelPlacement="floating" value={defaultValueInput.lastname}>
+                <div slot="label">
+                  <IonLabel>Apellido</IonLabel>
+                </div>
+              </IonInput>
+            </IonItem>
+          </IonItem>
+        </IonContent>
       </IonPage>
-      <IonContent>
-        <IonTitle>Para editar Name</IonTitle>
-      </IonContent>
     </>
   );
 }

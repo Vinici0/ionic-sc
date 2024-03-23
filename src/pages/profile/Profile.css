@@ -12,6 +12,7 @@ ion-header {
     align-items: center !important;
   }
   
+
   .ion-text-center {
     text-align: center !important;
   }
@@ -19,4 +20,33 @@ ion-header {
   .full-width {
     --padding-start: 0;
     --padding-end: 0;
+  }
+
+
+  .item-avatar  {     
+    width:100% !important;  
+    height : 100% !important;  
+    max-width: 130px !important;  
+    max-height: 130px !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    }
+
+    .container-avatar{
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      
+    }
+    
+    .color-label{
+      color: #12448f;
+    }
+
+  .color-title{
+    color: #12448f;
   }

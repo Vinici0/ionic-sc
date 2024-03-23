@@ -18,8 +18,17 @@ import "../../src/theme/main-custom.css";
 import "../../src/theme/variables.css";
 
 import { exitOutline, exitSharp } from "ionicons/icons";
+import { useHistory } from "react-router";
 
 export const MenuContent: React.FC = () => {
+  const history = useHistory();
+
+  const signOut = () => {
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("user");
+    history.push("/page/login");
+  };
+
   return (
     <IonMenu contentId="main-content">
       {/* <IonHeader>
@@ -84,6 +93,7 @@ export const MenuContent: React.FC = () => {
             id="present-alert"
             fill="outline"
             className="close-session"
+            onClick={() => signOut()}
           >
             Cerrar sesión
             <IonIcon

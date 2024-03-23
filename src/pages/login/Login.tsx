@@ -103,6 +103,11 @@ const LoginPage: React.FC<LoginProps> = () => {
       });
   };
 
+
+  const signUp = () => {
+    history.push("/page/home");
+  }
+
   return (
     <IonPage id="login-page">
       <IonContent fullscreen className="">
@@ -166,6 +171,7 @@ const LoginPage: React.FC<LoginProps> = () => {
                     <IonButton
                       type="submit"
                       className="flex flex-col my-1 login"
+                      onClick={() => signUp()}
                     >
                       Iniciar Sesión
                       <IonIcon slot="end" icon={arrowForwardCircleOutline} />
