@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 const initialState = {
-    showTabs: true,
-    };
+  showTabs: true,
+};
 
 const navagationSlice = createSlice({
-  name: 'navigation',
-    initialState,
+  name: "navigation",
+  initialState,
   reducers: {
     setShowTabs: (state, action) => {
       state.showTabs = action.payload;

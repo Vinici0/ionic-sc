@@ -36,7 +36,7 @@ function SettingPage() {
       <IonPage id="config-page">
         <IonHeader>
           <IonToolbar className="bg-blue">
-            <IonTitle>Editar Perfil</IonTitle>
+            <IonTitle>Configuración</IonTitle>
           </IonToolbar>
         </IonHeader>
 

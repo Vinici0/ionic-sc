@@ -50,7 +50,7 @@ const SignaleoRoute: React.FC = () => {
         >
           <IonTabButton tab="home" href="/page/home">
             <IonIcon icon={home} />
-            <IonLabel>Menu</IonLabel>
+            <IonLabel>Menú</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="radio" href="/page/event">

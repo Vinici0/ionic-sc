@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 import {
+  IonButton,
   IonButtons,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
   IonContent,
   IonHeader,
+  IonIcon,
   IonMenuButton,
   IonPage,
   IonTitle,
@@ -19,6 +21,7 @@ import { EventDetail, LateralMenuList, StateObject } from "../../components/home
 import {MenuContent} from "../../components/MenuContent";
 import { Zones } from "../../components/home/Zones";
 import CarButton from "../../components/home/CarButton";
+import { notifications, notificationsOutline } from "ionicons/icons";
 
 
 const Home: React.FC = () => {
@@ -39,7 +42,12 @@ const Home: React.FC = () => {
             <IonButtons slot="start">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle>Menu</IonTitle>
+            <IonTitle>Menú</IonTitle>
+            <IonButtons slot="end">
+              <IonButton>
+                <IonIcon icon={notifications} />
+              </IonButton>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
 
