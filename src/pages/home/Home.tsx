@@ -6,28 +6,34 @@ import {
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
   IonIcon,
   IonMenuButton,
   IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 
 import "./Home.css";
 
-import { EventDetail, LateralMenuList, StateObject } from "../../components/home";
-import {MenuContent} from "../../components/MenuContent";
+import {
+  EventDetail,
+  LateralMenuList,
+  StateObject,
+} from "../../components/home";
+import { MenuContent } from "../../components/MenuContent";
 import { Zones } from "../../components/home/Zones";
 import CarButton from "../../components/home/CarButton";
 import { notifications, notificationsOutline } from "ionicons/icons";
-
+import Notification from "../../components/home/Notification";
 
 const Home: React.FC = () => {
-  
   const [selectedButton, setSelectedButton] = useState<string>("home");
-  
+
   const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
     console.log(e.currentTarget);
   };
@@ -36,7 +42,6 @@ const Home: React.FC = () => {
     <div className="fon-garet">
       <MenuContent />
       <IonPage id="main-content">
-
         <IonHeader>
           <IonToolbar className="bg-blue">
             <IonButtons slot="start">
@@ -62,11 +67,11 @@ const Home: React.FC = () => {
             <IonCardSubtitle>Sensor ATM</IonCardSubtitle>
           </IonCardHeader>
 
-
           {selectedButton === "home" && <CarButton />}
           {selectedButton === "event" && <EventDetail />}
           {selectedButton === "state" && <StateObject />}
           {selectedButton === "zone" && <Zones />}
+          {selectedButton === "notification" && <Notification />}
         </IonContent>
       </IonPage>
     </div>

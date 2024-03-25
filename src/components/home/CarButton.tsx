@@ -34,34 +34,50 @@ const CarButton = () => {
   return (
     <>
       <IonGrid>
-        <IonRow
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "20px",
-          }}
-        >
-          <IonCol size="6" sizeSm="4" sizeMd="3" sizeLg="2">
-            <IonButton
-              color="light"
-              expand="block"
-              className="btn-car"
-              style={{ marginTop: "10px" }}
-            >
-              <p className="text-center">Car</p>
-            </IonButton>
-          </IonCol>
-
+        <IonRow>
           {listNameButton.map((item, index) => (
-            <IonCol size="6" sizeSm="4" sizeMd="3" sizeLg="2" key={index}>
+            <IonCol
+              size="4"
+              sizeSm="4"
+              sizeMd="3"
+              sizeLg="2"
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                margin: "0 0 12px 0",
+              }}
+            >
               <IonButton
-                color="light"
-                expand="block"
-                className="btn-car"
-                style={{ marginTop: "10px" }}
+                style={{
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  width: "80px",
+                  height: "80px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
               >
-                <p className="text-center">{item.name}</p>
+                <img
+                  src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ionic-512.png"
+                  alt="example"
+                  style={{ width: "70%", height: "70%" }}
+                />
+                
               </IonButton>
+
+              <p
+                style={{
+                  textAlign: "center",
+                  fontSize: "10px",
+                  margin: "1px 0 0 0",
+                }}
+              >
+                {item.name}
+              </p>
             </IonCol>
           ))}
         </IonRow>

@@ -27,10 +27,13 @@ import "./Setting.css";
 function SettingPage() {
   const history = useHistory();
   const signOut = () => {
-    // localStorage.removeItem("token");
-    // localStorage.removeItem("user");
     history.push("/page/login");
   };
+
+  const openLink = () => {
+    window.open("https://www.gruposcanner.com/gsaxios/privacidad", "_blank");
+  }
+
   return (
     <>
       <IonPage id="config-page">
@@ -77,7 +80,7 @@ function SettingPage() {
                 <IonIcon slot="start" icon={helpCircle} />
                 <IonLabel>Soporte</IonLabel>
               </IonItem>
-              <IonItem className="custom-background" lines="none" button={true}>
+              <IonItem className="custom-background" lines="none" button={true} onClick={openLink}>
                 <IonIcon slot="start" icon={documentText} />
                 <IonLabel>Términos y Políticas</IonLabel>
               </IonItem>

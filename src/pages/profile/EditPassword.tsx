@@ -57,6 +57,7 @@ import {
                 aria-label="current-password"
                 position="floating">Contraseña actual</IonLabel>
                 <IonInput 
+                
                 aria-label="current-password"
                 type="password" value={defaultValueInput.currentPassword}></IonInput>
             </IonItem>
