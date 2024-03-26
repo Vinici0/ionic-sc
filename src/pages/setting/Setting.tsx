@@ -51,11 +51,7 @@ function SettingPage() {
                 className="custom-background"
                 lines="none"
                 button={true}
-                onClick={() =>
-                  history.push("/page/setting/profile", {
-                    direction: "forward",
-                  })
-                }
+                routerLink="/page/setting/profile"
               >
                 <IonIcon slot="start" icon={person} />
                 <IonLabel>Editar Perfil</IonLabel>

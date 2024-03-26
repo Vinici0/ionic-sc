@@ -19,3 +19,28 @@ ion-col {
 hr {
   border: 0.5px solid #00000042;
 }
+
+.button-car {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d9d9d9;
+}
+
+.text-muted {
+  text-align: center;
+  font-size: 10px;
+  margin: 1px 0 0 0;
+}
+
+.col-car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 12px 0;
+}

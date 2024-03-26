@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import {
   IonAvatar,
   IonBackButton,
-  IonButton,
   IonButtons,
   IonCol,
   IonContent,
@@ -28,7 +27,6 @@ import {
 
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
-import { useHistory } from "react-router";
 
 import "./Profile.css";
 
@@ -43,7 +41,6 @@ const ProfilePage = () => {
     };
   }, [dispatch]);
 
-  const history = useHistory();
 
   const user = {
     nombre: "Juan",
@@ -85,30 +82,26 @@ const ProfilePage = () => {
               <IonItemSlidingProfile
                 typeUdate="Nombre"
                 userValue={user.nombre}
-                history={history}
-                onClick={() => history.push(`/page/setting/editName`)}
+                path="/page/setting/editName"
               />
 
               <IonItemSlidingProfile
                 typeUdate="Contraseña"
                 userValue="*********"
-                history={history}
-                onClick={() => history.push(`/page/setting/password`)}
+                path="/page/setting/password"
               />
-              
+
               <IonItemSlidingProfile
                 typeUdate="Bibliografía"
                 userValue={user.bibliografia}
-                history={history}
-                onClick={() => history.push(`/page/edit/`)}
+                path="/page/settingTabs/editBiography"
               />
 
               <IonItemSlidingProfile
                 typeUdate="Cuenta"
                 color="color-label"
                 userValue="Ir a mi cuenta"
-                history={history}
-                onClick={() => history.push(`/page/myAccount`)}
+                path="/page/settingTabs/account"
               />
             </IonList>
           </div>
@@ -123,23 +116,19 @@ export default ProfilePage;
 interface IonItemSlidingProfileProps {
   typeUdate: string;
   userValue: string;
-  history: any;
   color?: string;
-  onClick: () => void;
+  path: string;
 }
 
 const IonItemSlidingProfile = ({
   typeUdate = "Perfil",
   userValue,
   color,
-  history,
-  onClick,
-}: // onClick,
-IonItemSlidingProfileProps) => {
+  path,
+}: IonItemSlidingProfileProps) => {
   return (
     <IonItemSliding>
-      {/*  path="/page/settingTabs/editName" */}
-      <IonItem button onClick={() => onClick()} className="full-width">
+      <IonItem button routerLink={path} className="full-width">
         <IonGrid class="ion-padding-horizontal">
           <IonRow>
             <IonCol>

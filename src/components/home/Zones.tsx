@@ -4,10 +4,6 @@ import { checkmarkCircleOutline } from "ionicons/icons";
 export const Zones = () => {
   return (
     <>
-      {/* <IonText color="primary">
-        <h1>Zones</h1>
-      </IonText> */}
-
       <IonGrid>
         <div className="conteiner">
           <IonRow class="ion-justify-content-between ion-text-center">
@@ -48,7 +44,7 @@ export const Zones = () => {
           </IonRow>
 
           <IonRow>
-            <IonCol >2</IonCol>
+            <IonCol>2</IonCol>
             <IonCol>Importante</IonCol>
             <IonCol>
               <IonIcon icon={checkmarkCircleOutline} color="success" />{" "}

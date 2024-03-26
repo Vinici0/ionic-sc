@@ -64,3 +64,8 @@ export interface EventDetailProps {
   event: string;
   description: string;
 }
+
+export interface CustomPhoto {
+  filepath: string;
+  webviewPath?: string;
+}

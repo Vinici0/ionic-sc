@@ -9,9 +9,7 @@ import {
   IonTitle,
   IonContent,
   IonInput,
-  IonText,
   IonItem,
-  IonLabel,
   IonButton,
   IonIcon,
 } from "@ionic/react";

@@ -14,10 +14,16 @@ import {
 } from "@ionic/react";
 
 import "../../src/theme/main-custom.css";
-import "./ExploreContainer.css"
+import "./ExploreContainer.css";
 import "../../src/theme/variables.css";
 
-import { exitOutline, exitSharp } from "ionicons/icons";
+import {
+  exitOutline,
+  exitSharp,
+  homeOutline,
+  notificationsOutline,
+  shareOutline,
+} from "ionicons/icons";
 import { useHistory } from "react-router";
 
 export const MenuContent: React.FC = () => {
@@ -39,7 +45,7 @@ export const MenuContent: React.FC = () => {
       <IonContent className="ion-padding-top ion-padding-bottom relative">
         <IonList id="inbox-list">
           <div>
-            <div className="flex  ion-justify-content-center ion-margin-bottom">
+            <div className="flex ion-justify-content-start ion-margin-bottom">
               <IonAvatar>
                 <img
                   alt="profile-picture"
@@ -59,34 +65,24 @@ export const MenuContent: React.FC = () => {
               0939225130
             </IonNote>
           </div>
-          {/* <IonMenuToggle autoHide={false}>
-            {appPages.map((appPage, index) => {
-              if (
-                appPage.permissions.find((perm) => perm === user?.permission)
-              ) {
-                return (
-                  <IonItem
-                    key={index}
-                    className={
-                      location.pathname === appPage.url ? "selected" : ""
-                    }
-                    routerLink={appPage.url}
-                    routerDirection="none"
-                    lines="none"
-                    detail={false}
-                  >
-                    <IonIcon
-                      aria-hidden="true"
-                      slot="start"
-                      ios={appPage.iosIcon}
-                      md={appPage.mdIcon}
-                    />
-                    <IonLabel>{appPage.title}</IonLabel>
-                  </IonItem>
-                );
-              }
-            })}
-          </IonMenuToggle> */}
+          <IonMenuToggle autoHide={false}>
+            <IonItem routerLink="/home" routerDirection="none" lines="none">
+              <IonIcon slot="start" icon={homeOutline} />
+              <IonLabel>Home</IonLabel>
+            </IonItem>
+            <IonItem
+              routerLink="/notifications"
+              routerDirection="none"
+              lines="none"
+            >
+              <IonIcon slot="start" icon={notificationsOutline} />
+              <IonLabel>Notificaciones</IonLabel>
+            </IonItem>
+            <IonItem routerLink="/share" routerDirection="none" lines="none">
+              <IonIcon slot="start" icon={shareOutline} />
+              <IonLabel>Compartir</IonLabel>
+            </IonItem>
+          </IonMenuToggle>
         </IonList>
         <div className="w-full ion-text-center bottom-3 flex ion-justify-content-center ionc">
           <IonButton
@@ -114,7 +110,6 @@ export const MenuContent: React.FC = () => {
               {
                 text: "OK",
                 role: "confirm",
-                // handler: () => closeSession(),
               },
             ]}
           ></IonAlert>

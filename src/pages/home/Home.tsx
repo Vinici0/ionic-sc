@@ -6,14 +6,11 @@ import {
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
-  IonCol,
   IonContent,
-  IonGrid,
   IonHeader,
   IonIcon,
   IonMenuButton,
   IonPage,
-  IonRow,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -34,10 +31,6 @@ import { useHistory } from "react-router";
 
 function HomePage() {
   const [selectedButton, setSelectedButton] = useState<string>("home");
-
-  const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
-    console.log(e.currentTarget);
-  };
 
   const history = useHistory();
 

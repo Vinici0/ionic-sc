@@ -3,12 +3,8 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonRadio,
-  IonRadioGroup,
 } from "@ionic/react";
-import { useState } from "react";
 
-import { useForm } from "react-hook-form";
 const notificationsRadio = [
   {
     label: "Alarma",

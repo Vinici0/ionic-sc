@@ -12,8 +12,7 @@ import {
 import { useEffect } from "react";
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
-import image from '../../assets/images/notification.svg';
-
+import image from "../../assets/images/notification.svg";
 
 function NotificationPage() {
   const dispatch = useAppDispatch();
@@ -28,7 +27,6 @@ function NotificationPage() {
   return (
     <>
       <IonPage id="notification-page">
-
         <IonHeader class="ion-no-border">
           <IonToolbar>
             <IonButtons slot="start">
@@ -38,10 +36,24 @@ function NotificationPage() {
         </IonHeader>
 
         <IonContent>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-                <img src={image} alt="Login" style={{ width: '50%', height: 'auto' }} />
-                <IonText style={{ marginTop: '20px' }}>No hay notificaciones disponibles</IonText>
-            </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%",
+            }}
+          >
+            <img
+              src={image}
+              alt="Login"
+              style={{ width: "50%", height: "auto" }}
+            />
+            <IonText style={{ marginTop: "20px" }}>
+              No hay notificaciones disponibles
+            </IonText>
+          </div>
         </IonContent>
       </IonPage>
     </>
