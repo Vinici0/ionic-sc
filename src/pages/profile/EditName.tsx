@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import {
   IonPage,
   IonHeader,
@@ -7,18 +9,37 @@ import {
   IonTitle,
   IonContent,
   IonInput,
-  IonText,
   IonItem,
-  IonLabel,
   IonButton,
   IonIcon,
 } from "@ionic/react";
-// import "./Profile.css";
-import { useEffect } from "react";
+
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
+
+import { checkmarkOutline, personOutline, personSharp } from "ionicons/icons";
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
-import { checkmarkOutline } from "ionicons/icons";
+
+const datosDefaultNameAndPassword = {
+  name: "",
+  lastname: "",
+};
+
 function EditNamePage() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+    clearErrors,
+    reset,
+    setValue,
+    getValues,
+  } = useForm<any>({
+    defaultValues: datosDefaultNameAndPassword,
+  });
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -29,9 +50,8 @@ function EditNamePage() {
     };
   }, [dispatch]);
 
-  const defaultValueInput = {
-    name: "Juan",
-    lastname: "Perez",
+  const onSubmit = (data: any) => {
+    console.log(data);
   };
 
   return (
@@ -44,34 +64,55 @@ function EditNamePage() {
             </IonButtons>
             <IonTitle>Editar Nombre</IonTitle>
             <IonButtons slot="end">
-              <IonButton>
+              <IonButton onClick={handleSubmit(onSubmit)}>
                 <IonIcon icon={checkmarkOutline} />
               </IonButton>
             </IonButtons>
           </IonToolbar>
         </IonHeader>
         <IonContent>
-          <IonItem>
-            <IonLabel position="floating">Nombre</IonLabel>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <IonItem>
-              <IonInput labelPlacement="floating" value={defaultValueInput.name}>
-                <div slot="label">
-                  <IonLabel>Nombre</IonLabel>
-                </div>
-              </IonInput>
-
-              </IonItem>
-          </IonItem>
-          <IonItem>
-            <IonLabel position="floating">Apellido</IonLabel>
-            <IonItem>
-              <IonInput labelPlacement="floating" value={defaultValueInput.lastname}>
-                <div slot="label">
-                  <IonLabel>Apellido</IonLabel>
-                </div>
-              </IonInput>
+              <IonInput
+                {...register("name", {
+                  required: "Este campo es requerido.",
+                  pattern: {
+                    value:
+                      /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]\s?/,
+                    message: "Solo letras están permitidas",
+                  },
+                })}
+                aria-label="Nombres"
+                type="text"
+                label="Nombres"
+                labelPlacement="floating"
+                placeholder="Nombres"
+              />
             </IonItem>
-          </IonItem>
+            <div className="ion-padding-start text-color">
+              <ErrorMessage errors={errors} name="name" as={<div />} />
+            </div>
+            <IonItem>
+              <IonInput
+                {...register("lastname", {
+                  required: "Este campo es requerido.",
+                  pattern: {
+                    value:
+                      /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]\s?/,
+                    message: "Solo letras están permitidas",
+                  },
+                })}
+                aria-label="Apellidos"
+                type="text"
+                label="Apellidos"
+                labelPlacement="floating"
+                placeholder="Apellidos"
+              />
+            </IonItem>
+            <div className="ion-padding-start text-color">
+              <ErrorMessage errors={errors} name="lastname" as={<div />} />
+            </div>
+          </form>
         </IonContent>
       </IonPage>
     </>

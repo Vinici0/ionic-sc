@@ -66,9 +66,8 @@ const CarButton = () => {
                   alt="example"
                   style={{ width: "70%", height: "70%" }}
                 />
-                
-              </IonButton>
 
+              </IonButton>
               <p
                 style={{
                   textAlign: "center",

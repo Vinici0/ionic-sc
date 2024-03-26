@@ -280,6 +280,11 @@ body.dark {
   --ion-table-header: #b16611;
   --ion-button-calendar: #262626;
   --ion-button-calendar-text: #fff;
+  --text-muted: #cccccc;
+  --ion-button-filtros-text: #ff8700;
+  --custom-badge: transparent;
+  --ion-button-checkbox-loggin: #fff;
+  --ion-button-checkbox-loggin-bg: transparent;
 }
 
 .ios body.dark ion-modal {
@@ -351,6 +356,11 @@ body.dark {
   --ion-table-header: #b16611;
   --ion-button-calendar: #262626;
   --ion-button-calendar-text: #fff;
+  --text-muted: #cccccc;
+  --ion-button-filtros-text: #ff8700;
+  --custom-badge: transparent;
+  --ion-button-checkbox-loggin: #fff;
+  --ion-button-checkbox-loggin-bg: transparent;
 }
 
 .ios body {
@@ -378,8 +388,14 @@ body.dark {
   --alert-tooltip-bg: rgba(42, 127, 253, 0.15);
   --ion-avatar-background: #f7f7f7;
   --ion-table-header: rgba(1, 46, 112, 1);
-  --ion-button-calendar: #EDEEF0;
+  --ion-button-calendar: #edeef0;
   --ion-button-calendar-text: #000;
+  --text-muted: #717171;
+  --ion-button-filtros-text: #12448f;
+  --custom-badge: #fff;
+  --ion-button-checkbox-loggin: #12448f;
+  --ion-button-checkbox-loggin-bg: #fff;
+  --ion-menu-toggle-item: 18, 68, 143;
 }
 
 .md body {
@@ -407,24 +423,12 @@ body.dark {
   --alert-tooltip-bg: rgba(42, 127, 253, 0.15);
   --ion-avatar-background: #f7f7f7;
   --ion-table-header: rgba(1, 46, 112, 1);
-  --ion-button-calendar: #EDEEF0;
+  --ion-button-calendar: #edeef0;
   --ion-button-calendar-text: #000;
+  --text-muted: #717171;
+  --ion-button-filtros-text: #12448f;
+  --custom-badge: #fff;
+  --ion-button-checkbox-loggin: #12448f;
+  --ion-button-checkbox-loggin-bg: #fff;
+  --ion-menu-toggle-item: 18, 68, 143;
 }
-
-
-.avatar-with-gradient {
-  position: relative;
-}
-
-.avatar-with-gradient::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.7));
-}
-
-

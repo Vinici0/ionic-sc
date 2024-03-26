@@ -14,7 +14,7 @@ import {
 } from "@ionic/react";
 
 import "../../src/theme/main-custom.css";
-
+import "./ExploreContainer.css"
 import "../../src/theme/variables.css";
 
 import { exitOutline, exitSharp } from "ionicons/icons";
@@ -88,7 +88,7 @@ export const MenuContent: React.FC = () => {
             })}
           </IonMenuToggle> */}
         </IonList>
-        <div className="w-full ion-text-center absolute bottom-3 flex ion-justify-content-center">
+        <div className="w-full ion-text-center bottom-3 flex ion-justify-content-center ionc">
           <IonButton
             id="present-alert"
             fill="outline"

@@ -30,13 +30,16 @@ import { Zones } from "../../components/home/Zones";
 import CarButton from "../../components/home/CarButton";
 import { notifications, notificationsOutline } from "ionicons/icons";
 import Notification from "../../components/home/Notification";
+import { useHistory } from "react-router";
 
-const Home: React.FC = () => {
+function HomePage() {
   const [selectedButton, setSelectedButton] = useState<string>("home");
 
   const getItemData = (e: React.MouseEvent<HTMLIonListElement, MouseEvent>) => {
     console.log(e.currentTarget);
   };
+
+  const history = useHistory();
 
   return (
     <div className="fon-garet">
@@ -49,7 +52,11 @@ const Home: React.FC = () => {
             </IonButtons>
             <IonTitle>Menú</IonTitle>
             <IonButtons slot="end">
-              <IonButton>
+              <IonButton
+                onClick={() => {
+                  history.push("/page/notification");
+                }}
+              >
                 <IonIcon icon={notifications} />
               </IonButton>
             </IonButtons>
@@ -76,6 +83,6 @@ const Home: React.FC = () => {
       </IonPage>
     </div>
   );
-};
+}
 
-export default Home;
+export default HomePage;

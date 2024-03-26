@@ -1,7 +1,14 @@
-import { IonItem, IonLabel, IonList, IonRadio } from "@ionic/react";
+import {
+  IonCheckbox,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRadio,
+  IonRadioGroup,
+} from "@ionic/react";
 import { useState } from "react";
-import { useForm } from "../../hooks/useForm";
 
+import { useForm } from "react-hook-form";
 const notificationsRadio = [
   {
     label: "Alarma",
@@ -66,8 +73,8 @@ interface RadioSelect {
 }
 
 function Notification() {
-  const onChangeRadio = (e: any) => {
-    console.log(e.target.value);
+  const handleRadioChange = (e: RadioSelect) => {
+    console.log(e);
   };
   return (
     <>
@@ -75,12 +82,19 @@ function Notification() {
         <IonList>
           {notificationsRadio.map((notification, index) => (
             <IonItem key={index}>
-              <IonLabel>{notification.label}</IonLabel>
-              <IonRadio
-                slot="start"
+              <IonLabel
+                style={{
+                  flex: 1,
+                  fontSize: "1rem",
+                }}
+              >
+                {notification.label}
+              </IonLabel>
+              <IonCheckbox
+                slot="end"
                 value={notification.value}
-                onClick={onChangeRadio}
-              />
+                aria-label={notification.label}
+              ></IonCheckbox>
             </IonItem>
           ))}
         </IonList>

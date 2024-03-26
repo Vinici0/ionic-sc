@@ -1,86 +1,159 @@
+import { useEffect } from "react";
+
 import {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonButtons,
-    IonBackButton,
-    IonTitle,
-    IonContent,
-    IonInput,
-    IonText,
-    IonItem,
-    IonLabel,
-    IonButton,
-    IonIcon,
-  } from "@ionic/react";
-  // import "./Profile.css";
-  import { useEffect } from "react";
-  import { useAppDispatch } from "../../store";
-  import { setShowTabs } from "../../store/navigation/slice";
-  import { checkmarkOutline } from "ionicons/icons";
-  function EditPasswordPage() {
-    const dispatch = useAppDispatch();
-  
-    useEffect(() => {
-      dispatch(setShowTabs(false));
-  
-      return () => {
-        dispatch(setShowTabs(true));
-      };
-    }, [dispatch]);
-  
-    const defaultValueInput = {
-        currentPassword: "",
-        newPassword: "",
-        repeatPassword: "",
-        };
-  
-    return (
-      <>
-        <IonPage id="config-page">
-          <IonHeader class="ion-no-border">
-            <IonToolbar>
-              <IonButtons slot="start">
-                <IonBackButton className="black-back-button"></IonBackButton>
-              </IonButtons>
-              <IonTitle>Editar Contraseña</IonTitle>
-              <IonButtons slot="end">
-                <IonButton>
-                  <IonIcon icon={checkmarkOutline} />
-                </IonButton>
-              </IonButtons>
-            </IonToolbar>
-          </IonHeader>
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonButtons,
+  IonBackButton,
+  IonTitle,
+  IonContent,
+  IonInput,
+  IonText,
+  IonItem,
+  IonLabel,
+  IonButton,
+  IonIcon,
+} from "@ionic/react";
+
+import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
+
+import { useAppDispatch } from "../../store";
+import { setShowTabs } from "../../store/navigation/slice";
+import { checkmarkOutline } from "ionicons/icons";
+
+const datosDefaultPassword = {
+  currentPassword: "",
+  newPassword: "",
+  repeatPassword: "",
+};
+
+function EditPasswordPage() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setShowTabs(false));
+
+    return () => {
+      dispatch(setShowTabs(true));
+    };
+  }, [dispatch]);
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    setError,
+    clearErrors,
+    reset,
+    setValue,
+    getValues,
+  } = useForm<any>({
+    defaultValues: datosDefaultPassword,
+  });
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
+  return (
+    <>
+      <IonPage id="config-page">
+        <IonHeader class="ion-no-border">
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton className="black-back-button"></IonBackButton>
+            </IonButtons>
+            <IonTitle>Editar Contraseña</IonTitle>
+            <IonButtons slot="end">
+              <IonButton onClick={handleSubmit(onSubmit)}>
+                <IonIcon icon={checkmarkOutline} />
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+        </IonHeader>
         <IonContent>
-            <IonItem lines="full" style={{ margin: '10px 0' }}>
-                <IonLabel 
-                aria-label="current-password"
-                position="floating">Contraseña actual</IonLabel>
-                <IonInput 
-                
-                aria-label="current-password"
-                type="password" value={defaultValueInput.currentPassword}></IonInput>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <IonItem>
+              <IonInput
+                {...register("currentPassword", {
+                  required: "Este campo es requerido.",
+                  minLength: {
+                    value: 8,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                })}
+                aria-label="currentPassword"
+                type="password"
+                label="Contraseña actual"
+                labelPlacement="floating"
+                placeholder="Contraseña actual"
+              />
             </IonItem>
-
-            <IonItem lines="full" style={{ margin: '10px 0' }}>
-                <IonLabel aria-label="new-password" position="floating">Nueva contraseña</IonLabel>
-                <IonInput aria-label="new-password" type="password" value={defaultValueInput.newPassword}></IonInput>
+            <div className="ion-padding-start text-color">
+              <ErrorMessage
+                errors={errors}
+                name="currentPassword"
+                as={<div />}
+              />
+            </div>
+            <IonItem>
+              <IonInput
+                {...register("newPassword", {
+                  required: "Este campo es requerido.",
+                  minLength: {
+                    value: 8,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                })}
+                aria-label="newPassword"
+                type="password"
+                label="Nueva contraseña"
+                labelPlacement="floating"
+                placeholder="Nueva contraseña"
+              />
             </IonItem>
+            <div className="ion-padding-start text-color">
+              <ErrorMessage errors={errors} name="newPassword" as={<div />} />
+            </div>
 
-            <IonItem lines="full" style={{ margin: '10px 0' }}>
-                <IonLabel 
-                aria-label="repeat-password"
-                    position="floating">Repetir contraseña</IonLabel>
-                <IonInput 
-                aria-label="repeat-password"
-                type="password" value={defaultValueInput.repeatPassword}></IonInput>
+            <IonItem>
+              <IonInput
+                {...register("repeatPassword", {
+                  required: "Este campo es requerido.",
+                  minLength: {
+                    value: 8,
+                    message: "La contraseña debe tener al menos 8 caracteres",
+                  },
+                  validate: {
+                    matchesPreviousPassword: (value) => {
+                      const { newPassword } = getValues();
+                      return (
+                        newPassword === value || "Las contraseñas no coinciden"
+                      );
+                    },
+                  },
+                })}
+                aria-label="repeatPassword"
+                type="password"
+                label="Repetir contraseña"
+                labelPlacement="floating"
+                placeholder="Repetir contraseña"
+              />
             </IonItem>
-
+            <div className="ion-padding-start text-color">
+              <ErrorMessage
+                errors={errors}
+                name="repeatPassword"
+                as={<div />}
+              />
+            </div>
+          </form>
         </IonContent>
-        </IonPage>
-      </>
-    );
-  }
-  
-  export default EditPasswordPage;
-  
+      </IonPage>
+    </>
+  );
+}
+
+export default EditPasswordPage;

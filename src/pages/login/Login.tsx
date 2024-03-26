@@ -30,7 +30,8 @@ function validateEmail(email: string) {
   return re.test(String(email).toLowerCase());
 }
 
-const LoginPage: React.FC<LoginProps> = () => {
+// const LoginPage: React.FC<LoginProps> = () => {
+function LoginPage(): JSX.Element {
   const [username, setUsername] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
@@ -103,10 +104,9 @@ const LoginPage: React.FC<LoginProps> = () => {
       });
   };
 
-
   const signUp = () => {
     history.push("/page/home");
-  }
+  };
 
   return (
     <IonPage id="login-page">
@@ -191,6 +191,6 @@ const LoginPage: React.FC<LoginProps> = () => {
       </IonContent>
     </IonPage>
   );
-};
+}
 
 export default LoginPage;

@@ -32,7 +32,7 @@ function SettingPage() {
 
   const openLink = () => {
     window.open("https://www.gruposcanner.com/gsaxios/privacidad", "_blank");
-  }
+  };
 
   return (
     <>
@@ -60,7 +60,16 @@ function SettingPage() {
                 <IonIcon slot="start" icon={person} />
                 <IonLabel>Editar Perfil</IonLabel>
               </IonItem>
-              <IonItem className="custom-background" lines="none" button={true}>
+              <IonItem
+                className="custom-background"
+                lines="none"
+                button={true}
+                onClick={() =>
+                  history.push("/page/notification", {
+                    direction: "forward",
+                  })
+                }
+              >
                 <IonIcon slot="start" icon={notifications} />
                 <IonLabel>Notificaciones</IonLabel>
               </IonItem>
@@ -80,7 +89,12 @@ function SettingPage() {
                 <IonIcon slot="start" icon={helpCircle} />
                 <IonLabel>Soporte</IonLabel>
               </IonItem>
-              <IonItem className="custom-background" lines="none" button={true} onClick={openLink}>
+              <IonItem
+                className="custom-background"
+                lines="none"
+                button={true}
+                onClick={openLink}
+              >
                 <IonIcon slot="start" icon={documentText} />
                 <IonLabel>Términos y Políticas</IonLabel>
               </IonItem>
@@ -94,7 +108,10 @@ function SettingPage() {
                 <IonIcon slot="start" icon={alertCircle} />
                 <IonLabel>Reportar Problema</IonLabel>
               </IonItem>
-              <IonItem className="custom-background" lines="none" button={true}
+              <IonItem
+                className="custom-background"
+                lines="none"
+                button={true}
                 onClick={() => signOut()}
               >
                 <IonIcon slot="start" icon={logOut} />

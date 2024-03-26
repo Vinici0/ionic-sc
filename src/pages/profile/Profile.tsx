@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {
   IonAvatar,
   IonBackButton,
+  IonButton,
   IonButtons,
   IonCol,
   IonContent,
@@ -17,10 +18,13 @@ import {
   IonList,
   IonPage,
   IonRow,
-  IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { cameraOutline, chevronForwardOutline } from "ionicons/icons";
+import {
+  cameraOutline,
+  cameraSharp,
+  chevronForwardOutline,
+} from "ionicons/icons";
 
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
@@ -59,22 +63,21 @@ const ProfilePage = () => {
         </IonHeader>
 
         <IonContent fullscreen className="ion-padding-top">
- 
-
-          <IonAvatar className="item-avatar">
+          <IonAvatar className="item-avatar relative">
             <img
               className="img-avatar"
               alt="Silhouette of a person's head"
               src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
             />
+
+            <button className="absolute bottom-right-fixed">
+              <IonIcon icon={cameraSharp} />
+            </button>
           </IonAvatar>
 
           <div className="container-avatar">
-              <h3 className="color-title">
-                Actualizar foto de perfil
-              </h3>
+            <h3 className="color-title">Actualizar foto de perfil</h3>
           </div>
-         
 
           <div className="ion-padding-top">
             <IonList>
@@ -85,28 +88,24 @@ const ProfilePage = () => {
                 history={history}
                 onClick={() => history.push(`/page/setting/editName`)}
               />
-              {/* <IonItemSlidingProfile
-                typeUdate="Correo"
-                userValue={user.correo}
-                history={history}
-                onClick={() => history.push(`/page/edit/`)}
-              /> */}
-              {/* Contrasena */}
-              <IonItemSlidingProfile  
+
+              <IonItemSlidingProfile
                 typeUdate="Contraseña"
                 userValue="*********"
                 history={history}
                 onClick={() => history.push(`/page/setting/password`)}
               />
+              
               <IonItemSlidingProfile
                 typeUdate="Bibliografía"
                 userValue={user.bibliografia}
                 history={history}
                 onClick={() => history.push(`/page/edit/`)}
               />
+
               <IonItemSlidingProfile
                 typeUdate="Cuenta"
-                color="danger"
+                color="color-label"
                 userValue="Ir a mi cuenta"
                 history={history}
                 onClick={() => history.push(`/page/myAccount`)}
@@ -140,11 +139,7 @@ IonItemSlidingProfileProps) => {
   return (
     <IonItemSliding>
       {/*  path="/page/settingTabs/editName" */}
-      <IonItem
-        button
-        onClick={() => onClick()}
-        className="full-width"
-      >
+      <IonItem button onClick={() => onClick()} className="full-width">
         <IonGrid class="ion-padding-horizontal">
           <IonRow>
             <IonCol>
@@ -155,10 +150,14 @@ IonItemSlidingProfileProps) => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonLabel 
-              // class="color-label"
-              class={color === "danger" ? "color-label" : ""}
-              >{userValue}</IonLabel>
+              <IonLabel
+                style={{
+                  color: color ? "#12448f" : "black",
+                  fontSize: "0.9rem",
+                }}
+              >
+                {userValue}
+              </IonLabel>
             </IonCol>
           </IonRow>
         </IonGrid>
@@ -166,7 +165,7 @@ IonItemSlidingProfileProps) => {
           icon={chevronForwardOutline}
           slot="end"
           style={{ color: "gray" }}
-        />{" "}
+        />
       </IonItem>
       <IonItemOptions side="end">
         <IonItemOption onClick={() => console.log("Edit clicked")}>

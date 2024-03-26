@@ -109,7 +109,7 @@ const Menu: React.FC<AppRouterProps> = ({ user }) => {
               </span>
             </div>
             <div className="flex ion-justify-content-center ion-margin-bottom">
-              <IonAvatar>
+              <IonAvatar> 
                 <img
                   alt="profile-picture"
                   src={

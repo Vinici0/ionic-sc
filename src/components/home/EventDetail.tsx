@@ -66,11 +66,9 @@ const EventDetailList: EventDetailProps[] = [
 export const EventDetail: React.FC = () => {
   return (
     <>
-      {/* <IonTitle color="primary">Eventos</IonTitle> */}
       <IonItemDivider sticky>
         <IonLabel>15/14</IonLabel>
       </IonItemDivider>
-      {/* Mapea cada elemento de EventDetailList y pasa cada objeto como prop a SessionListItem */}
       {EventDetailList.map(
         (eventDetailProps: EventDetailProps, index: number) => (
           <EventListItem
