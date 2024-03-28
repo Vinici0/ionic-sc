@@ -21,7 +21,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={checkmarkCircleOutline}
                   color="success"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Norma
               </IonRow>
@@ -29,7 +29,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={flameOutline}
                   color="danger"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Fuego
               </IonRow>
@@ -39,7 +39,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={megaphoneOutline}
                   color="primary"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Alarma
               </IonRow>
@@ -47,7 +47,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={alertCircleOutline}
                   color="primary"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Defecto
               </IonRow>
@@ -57,7 +57,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={closeOutline}
                   color="warning"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Inactivo
               </IonRow>
@@ -65,7 +65,7 @@ function PannicButtons() {
                 <IonIcon
                   icon={helpCircleOutline}
                   color="warning"
-                  style={{ marginRight: "10px" }}
+                  className="ion-margin-end"
                 />
                 Desc.
               </IonRow>
@@ -73,9 +73,35 @@ function PannicButtons() {
           </IonRow>
         </IonGrid>
         <IonGrid>
-            <IonRow>
-                {/* 3 columa */}
-            </IonRow>
+          <IonRow></IonRow>
+        </IonGrid>
+      </div>
+      <div
+        className="bg-color
+        ion-padding ion-margin-top ion-margin-bottom ion-ion-margin-vertical 
+      "
+      >
+        <IonGrid class="ion-justify-content-between ion-text-center">
+          <IonRow>
+            <IonCol>#</IonCol>
+            <IonCol>Nombre</IonCol>
+            <IonCol>Estado</IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol>1</IonCol>
+            <IonCol>Probando como va</IonCol>
+            <IonCol>
+              <IonIcon icon={checkmarkCircleOutline} color="success" />{" "}
+            </IonCol>
+          </IonRow>
+
+          <IonRow>
+            <IonCol>2</IonCol>
+            <IonCol>Importante</IonCol>
+            <IonCol>
+              <IonIcon icon={checkmarkCircleOutline} color="success" />{" "}
+            </IonCol>
+          </IonRow>
         </IonGrid>
       </div>
     </>
