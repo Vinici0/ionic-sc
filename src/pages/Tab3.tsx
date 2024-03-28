@@ -21,7 +21,7 @@ const Tab3: React.FC = () => {
         <div className="container">
           <strong>{"awdawda"}</strong>
           <p>
-            Explore{" "}
+            Explore
             <a
               target="_blank"
               rel="noopener noreferrer"

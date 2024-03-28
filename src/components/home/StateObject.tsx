@@ -1,12 +1,7 @@
-import {
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonIcon,
-} from "@ionic/react";
+import { IonGrid, IonRow, IonCol, IonIcon } from "@ionic/react";
 import { checkmarkCircleOutline } from "ionicons/icons";
 
-export const StateObject = () => {
+function StateObject() {
   return (
     <>
       <IonGrid>
@@ -43,4 +38,6 @@ export const StateObject = () => {
       </IonGrid>
     </>
   );
-};
+}
+
+export default StateObject;

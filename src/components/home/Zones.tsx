@@ -1,7 +1,7 @@
 import { IonText, IonGrid, IonRow, IonCol, IonIcon } from "@ionic/react";
 import { checkmarkCircleOutline } from "ionicons/icons";
 
-export const Zones = () => {
+function Zones() {
   return (
     <>
       <IonGrid>
@@ -37,7 +37,6 @@ export const Zones = () => {
           <IonRow>
             <IonCol>1</IonCol>
             <IonCol>Probando como va</IonCol>
-            {/* Icono de visto verde */}
             <IonCol>
               <IonIcon icon={checkmarkCircleOutline} color="success" />{" "}
             </IonCol>
@@ -55,3 +54,5 @@ export const Zones = () => {
     </>
   );
 };
+
+export default Zones;

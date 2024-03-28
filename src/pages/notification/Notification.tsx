@@ -3,8 +3,6 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonIcon,
-  IonImg,
   IonPage,
   IonText,
   IonToolbar,

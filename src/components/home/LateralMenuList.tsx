@@ -7,11 +7,13 @@ interface LateralMenuListProps {
   setSelectedButton: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const LateralMenuList: React.FC<LateralMenuListProps> = ({
+function LateralMenuList({
   setSelectedButton,
   selectedButton,
-}) => {
+}: LateralMenuListProps) {
   const handleButtonClick = (path: string) => {
+    console.log(path);
+    
     setSelectedButton(path);
   };
 
@@ -36,4 +38,6 @@ export const LateralMenuList: React.FC<LateralMenuListProps> = ({
       </IonSegment>
     </>
   );
-};
+}
+
+export default LateralMenuList;

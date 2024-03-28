@@ -1,3 +1,5 @@
+import { useHistory } from "react-router";
+
 import {
   IonAlert,
   IonAvatar,
@@ -14,8 +16,8 @@ import {
 } from "@ionic/react";
 
 import "../../src/theme/main-custom.css";
-import "./ExploreContainer.css";
 import "../../src/theme/variables.css";
+import "./ExploreContainer.css";
 
 import {
   exitOutline,
@@ -24,9 +26,8 @@ import {
   notificationsOutline,
   shareOutline,
 } from "ionicons/icons";
-import { useHistory } from "react-router";
 
-export const MenuContent: React.FC = () => {
+function MenuContent() {
   const history = useHistory();
 
   const signOut = () => {
@@ -118,3 +119,5 @@ export const MenuContent: React.FC = () => {
     </IonMenu>
   );
 };
+
+export default MenuContent;

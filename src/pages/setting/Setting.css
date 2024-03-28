@@ -1,11 +1,10 @@
 .custom-background {
-    background-color: #f4f5f8;
-  }
+  background-color: #f4f5f8;
+}
 
-
-  .border-custom{
-    /* border: 1px solid #e0e0e0; */
-    border-radius: 10px;
-    /* padding: 10px;
+.border-custom {
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 10px;
+  /* padding: 10px;
     margin-top: 10px; */
-  }
+}

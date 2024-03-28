@@ -30,7 +30,6 @@ function validateEmail(email: string) {
   return re.test(String(email).toLowerCase());
 }
 
-// const LoginPage: React.FC<LoginProps> = () => {
 function LoginPage(): JSX.Element {
   const [username, setUsername] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);

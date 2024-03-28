@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+
 import {
   IonItemSliding,
   IonItem,
@@ -14,9 +14,9 @@ interface EventDetailObjectProps {
   number: number;
 }
 
-export const EventListItem: React.FC<EventDetailObjectProps> = (
-  eventDetailObjectProps
-) => {
+function EventListItem( 
+  eventDetailObjectProps: EventDetailObjectProps
+) {
   const { eventDetailProps } = eventDetailObjectProps;
   return (
     <IonItemSliding color="light">
@@ -36,3 +36,4 @@ export const EventListItem: React.FC<EventDetailObjectProps> = (
     </IonItemSliding>
   );
 };
+export default EventListItem;

@@ -1,32 +1,22 @@
 import { Redirect, Route } from "react-router-dom";
+
 import {
   IonApp,
   IonContent,
   IonPage,
   IonRouterOutlet,
-  IonTabs,
   setupIonicReact,
 } from "@ionic/react";
 import {
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
   IonLabel,
-  IonMenu,
   IonHeader,
   IonToolbar,
   IonTitle,
-  IonSplitPane,
   IonList,
   IonItem,
   IonAvatar,
-  IonNote,
-  IonButton,
-  IonListHeader,
-  IonAlert,
-  IonText,
 } from "@ionic/react";
-import { playCircle, radio, library, search } from "ionicons/icons";
+
 import { IonReactRouter } from "@ionic/react-router";
 
 /* Core CSS required for Ionic components to work properly */
@@ -44,12 +34,6 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
-
-/* Theme variables */
-// import "./theme/variables.css";
-import AppRouter from "./components/router/AppRouter";
-// import Tab1 from "./pages/Tab1";
-import SignaleoRoute from "./components/router/AppRouter";
 
 setupIonicReact();
 

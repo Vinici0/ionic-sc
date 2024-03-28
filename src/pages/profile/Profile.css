@@ -55,11 +55,12 @@ ion-header {
   position: absolute;
 }
 
-.absolute, .bottom-right-fixed{
+.absolute,
+.bottom-right-fixed {
   width: 40px;
   height: 40px;
-  background: var( --ion-toolbar-background-new);
-  color: var( --ion-toolbar-text);
+  background: var(--ion-toolbar-background-new);
+  color: var(--ion-toolbar-text);
   border-radius: 100%;
   padding: 0.6rem;
   position: absolute;
@@ -68,10 +69,10 @@ ion-header {
   left: 15;
 }
 
-button{
-  background: var( --ion-toolbar-background-new);
+button {
+  background: var(--ion-toolbar-background-new);
 }
 
-.text-color{
+.text-color {
   color: red;
 }

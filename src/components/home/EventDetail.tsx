@@ -2,7 +2,7 @@ import { IonItemDivider, IonLabel, IonTitle } from "@ionic/react";
 
 import "./Statyles.css";
 import { EventDetailProps } from "../../interfaces/interfaces";
-import { EventListItem } from "./EventListItem";
+import EventListItem  from "./EventListItem";
 
 const EventDetailList: EventDetailProps[] = [
   {
@@ -63,7 +63,7 @@ const EventDetailList: EventDetailProps[] = [
   },
 ];
 
-export const EventDetail: React.FC = () => {
+function EventDetail() {
   return (
     <>
       <IonItemDivider sticky>
@@ -81,3 +81,5 @@ export const EventDetail: React.FC = () => {
     </>
   );
 };
+
+export default EventDetail;

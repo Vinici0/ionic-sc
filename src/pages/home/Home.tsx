@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 
 import {
   IonButton,
@@ -15,19 +16,20 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-import "./Home.css";
+import { notifications } from "ionicons/icons";
 
 import {
   EventDetail,
   LateralMenuList,
   StateObject,
-} from "../../components/home";
-import { MenuContent } from "../../components/MenuContent";
-import { Zones } from "../../components/home/Zones";
-import CarButton from "../../components/home/CarButton";
-import { notifications, notificationsOutline } from "ionicons/icons";
-import Notification from "../../components/home/Notification";
-import { useHistory } from "react-router";
+  CarButton,
+  Notification,
+  Zones,
+  MenuContent,
+  PannicButtons,
+} from "../../components";
+
+import "./Home.css";
 
 function HomePage() {
   const [selectedButton, setSelectedButton] = useState<string>("home");
@@ -72,6 +74,7 @@ function HomePage() {
           {selectedButton === "state" && <StateObject />}
           {selectedButton === "zone" && <Zones />}
           {selectedButton === "notification" && <Notification />}
+          {selectedButton === "panicbuttons" && <PannicButtons />}
         </IonContent>
       </IonPage>
     </div>
