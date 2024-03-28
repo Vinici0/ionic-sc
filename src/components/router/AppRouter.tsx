@@ -41,13 +41,13 @@ const SignaleoRoute: React.FC = () => {
         <IonRouterOutlet id="main">
           <Route path="/" render={() => <HomePage />} exact={true} />
           <Route path="/page/home" component={HomePage} />
+          <Route path="/page/setting/profile" component={ProfilePage}  />
           <Route path="/page/login" component={LoginPage} exact={true} />
           <Route path="/page/notification" component={NotificationPage} />
           <Route path="/page/panicbuttons" component={PannicButtons} />
           <Route path="/page/setting" component={SettingPage} />
           <Route path="/page/setting/editName" component={EditNamePage} />
           <Route path="/page/setting/password" component={EditPasswordPage} />
-          <Route path="/page/setting/profile" component={ProfilePage} />
         </IonRouterOutlet>
 
         <IonTabBar

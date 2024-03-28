@@ -19,8 +19,8 @@ import {
   IonRow,
   IonToolbar,
 } from "@ionic/react";
+
 import {
-  cameraOutline,
   cameraSharp,
   chevronForwardOutline,
 } from "ionicons/icons";
@@ -30,7 +30,8 @@ import { setShowTabs } from "../../store/navigation/slice";
 
 import "./Profile.css";
 
-const ProfilePage = () => {
+function ProfilePage() {
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -40,7 +41,6 @@ const ProfilePage = () => {
       dispatch(setShowTabs(true));
     };
   }, [dispatch]);
-
 
   const user = {
     nombre: "Juan",
@@ -109,9 +109,7 @@ const ProfilePage = () => {
       </IonPage>
     </>
   );
-};
-
-export default ProfilePage;
+}
 
 interface IonItemSlidingProfileProps {
   typeUdate: string;
@@ -162,5 +160,7 @@ const IonItemSlidingProfile = ({
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
-  );
+  );  
 };
+
+export default ProfilePage;

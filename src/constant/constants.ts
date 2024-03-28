@@ -7,7 +7,7 @@ export const SEGMENT_BUTTONS = [
   { value: "3", label: "Estado del objeto", icon: pin , path: "state" },
   { value: "4", label: "Zonas", icon: star , path: "zone" },
   { value: "5", label: "Notificaciones", icon: call , path: "notification" },
-  { value: "6", label: "Botones de pánico", icon: globe , path: "panic" },
+  { value: "6", label: "Botones de pánico", icon: globe , path: "panicbuttons" },
   { value: "7", label: "Control de salidas", icon: basket , path: "output" },
   { value: "8", label: "Control de entradas", icon: barbell , path: "input" },
 ];

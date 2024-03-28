@@ -17,7 +17,8 @@ import {
 import { ErrorMessage } from "@hookform/error-message";
 import { useForm } from "react-hook-form";
 
-import { checkmarkOutline, personOutline, personSharp } from "ionicons/icons";
+import { checkmarkOutline} from "ionicons/icons";
+
 import { useAppDispatch } from "../../store";
 import { setShowTabs } from "../../store/navigation/slice";
 

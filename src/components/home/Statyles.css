@@ -44,3 +44,7 @@ hr {
   align-items: center;
   margin: 0 0 12px 0;
 }
+
+.pannic-buttons ion-col{
+  margin: 0 0 12px 12px;
+}

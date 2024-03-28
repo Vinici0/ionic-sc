@@ -27,7 +27,7 @@ function LateralMenuList({
       >
         {SEGMENT_BUTTONS.map((b) => (
           <IonSegmentButton
-            autoFocus={false}
+            autoFocus={false} 
             key={b.value}
             value={b.value}
             onClick={() => handleButtonClick(b.path)}
